@@ -1,31 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "client/**/*",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "../dist/public"
-      }
-    },
-    {
-      "src": "server/index.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["dist/public/**/*"]
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/server/index.ts"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/public/$1"
-    }
-  ],
+  "buildCommand": "npx vite build --config vite.config.prod.ts",
   "outputDirectory": "dist/public",
-  "buildCommand": "npm run build"
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
