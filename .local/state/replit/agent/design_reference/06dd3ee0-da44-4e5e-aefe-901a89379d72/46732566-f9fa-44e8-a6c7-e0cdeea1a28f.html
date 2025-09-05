@@ -1,0 +1,616 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LORMAN ACADEMIA - Preparación TCAE SAS Andalucía | 22.50€/mes</title>
+    <meta name="description" content="Preparate para TCAE SAS Andalucía con LORMAN ACADEMIA. 3 temas/mes, 200+ preguntas por tema, técnicas de memorización y clases en directo. Solo 22.50€/mes.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    destructive: {
+                        DEFAULT: "var(--destructive)",
+                        foreground: "var(--destructive-foreground)",
+                    },
+                    border: "var(--border)",
+                    input: "var(--input)",
+                    ring: "var(--ring)",
+                }
+            }
+        }
+    };
+    </script>
+    
+    <style>
+        :root {
+            --background: hsl(210 11% 96%);
+            --foreground: hsl(210 20% 12%);
+            --card: hsl(0 0% 100%);
+            --card-foreground: hsl(210 20% 12%);
+            --primary: hsl(179 88% 34%);
+            --primary-foreground: hsl(0 0% 100%);
+            --secondary: hsl(210 11% 96%);
+            --secondary-foreground: hsl(210 20% 12%);
+            --muted: hsl(210 11% 96%);
+            --muted-foreground: hsl(210 8% 45%);
+            --accent: hsl(43 96% 56%);
+            --accent-foreground: hsl(210 20% 12%);
+            --destructive: hsl(0 84% 60%);
+            --destructive-foreground: hsl(0 0% 100%);
+            --border: hsl(214 32% 91%);
+            --input: hsl(214 32% 91%);
+            --ring: hsl(179 88% 34%);
+            --radius: 0.5rem;
+        }
+        
+        .dark {
+            --background: hsl(210 20% 12%);
+            --foreground: hsl(210 11% 96%);
+            --card: hsl(210 19% 15%);
+            --card-foreground: hsl(210 11% 96%);
+            --primary: hsl(179 88% 34%);
+            --primary-foreground: hsl(0 0% 100%);
+            --secondary: hsl(210 19% 15%);
+            --secondary-foreground: hsl(210 11% 96%);
+            --muted: hsl(210 19% 15%);
+            --muted-foreground: hsl(210 8% 65%);
+            --accent: hsl(43 96% 56%);
+            --accent-foreground: hsl(210 20% 12%);
+            --destructive: hsl(0 84% 60%);
+            --destructive-foreground: hsl(0 0% 100%);
+            --border: hsl(210 19% 20%);
+            --input: hsl(210 19% 20%);
+            --ring: hsl(179 88% 34%);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, hsl(179 88% 34%) 0%, hsl(179 88% 28%) 100%);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .sticky-nav {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-background text-foreground">
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-border">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="text-2xl font-bold text-primary">LORMAN ACADEMIA</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#como" class="hover:text-primary transition-colors">Cómo funciona</a>
+                    <a href="#incluye" class="hover:text-primary transition-colors">Qué incluye</a>
+                    <a href="#metodo" class="hover:text-primary transition-colors">Metodología</a>
+                    <a href="#precio" class="hover:text-primary transition-colors">Precio</a>
+                    <a href="#faq" class="hover:text-primary transition-colors">FAQ</a>
+                    <a href="#contacto" class="hover:text-primary transition-colors">Contacto</a>
+                </div>
+                <a href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información" 
+                   class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                    <i class="fab fa-whatsapp mr-2"></i>Contactar
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto animate-fade-in-up">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    Aprueba el TCAE SAS Andalucía
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">
+                    Preparación completa con técnicas de memorización avanzadas, 200+ preguntas por tema y clases en directo
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                    <button onclick="scrollToPrice()" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all transform hover:scale-105">
+                        Empezar por 22,50 €/mes
+                    </button>
+                    <a href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información" 
+                       class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-all">
+                        <i class="fab fa-whatsapp mr-2"></i>Información gratis
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 text-sm opacity-80">
+                    <div><i class="fas fa-check mr-2"></i>Sin permanencia</div>
+                    <div><i class="fas fa-check mr-2"></i>Soporte 24/7</div>
+                    <div><i class="fas fa-check mr-2"></i>Grabaciones incluidas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section id="como" class="py-20 bg-muted">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">¿Cómo funciona?</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-semibold mb-3">Publicación mensual</h3>
+                    <p class="text-muted-foreground">Cada mes recibes 3 temas nuevos: 1 común + 2 específicos del temario TCAE Andalucía</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-semibold mb-3">Estudio completo</h3>
+                    <p class="text-muted-foreground">Materiales con técnicas de memorización: vídeos, PDFs, esquemas y reglas nemotécnicas</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-semibold mb-3">200+ preguntas</h3>
+                    <p class="text-muted-foreground">2 autoevaluaciones por tema con mínimo 100 preguntas cada una, tipo examen SAS</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="text-xl font-semibold mb-3">Clases en directo</h3>
+                    <p class="text-muted-foreground">2 clases extra al mes: dudas y repaso de fallos comunes. Todas grabadas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué incluye cada tema -->
+    <section id="incluye" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Qué incluye cada tema</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-primary text-3xl mb-4"><i class="fas fa-video"></i></div>
+                    <h3 class="text-xl font-semibold mb-3">Clase en vídeo</h3>
+                    <p class="text-muted-foreground">Explicación completa del tema con ejemplos prácticos y casos reales</p>
+                </div>
+                <div class="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-primary text-3xl mb-4"><i class="fas fa-file-pdf"></i></div>
+                    <h3 class="text-xl font-semibold mb-3">Material PDF</h3>
+                    <p class="text-muted-foreground">Tema completo, resumen ejecutivo y esquemas para estudio rápido</p>
+                </div>
+                <div class="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-primary text-3xl mb-4"><i class="fas fa-brain"></i></div>
+                    <h3 class="text-xl font-semibold mb-3">Reglas nemotécnicas</h3>
+                    <p class="text-muted-foreground">Técnicas de memorización específicas para cada concepto importante</p>
+                </div>
+                <div class="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-primary text-3xl mb-4"><i class="fas fa-palette"></i></div>
+                    <h3 class="text-xl font-semibold mb-3">Códigos de colores</h3>
+                    <p class="text-muted-foreground">Sistema visual por epígrafes para facilitar la organización mental</p>
+                </div>
+                <div class="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-primary text-3xl mb-4"><i class="fas fa-sitemap"></i></div>
+                    <h3 class="text-xl font-semibold mb-3">Mapas mentales</h3>
+                    <p class="text-muted-foreground">Visualización gráfica de conceptos y sus relaciones</p>
+                </div>
+                <div class="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-primary text-3xl mb-4"><i class="fas fa-question-circle"></i></div>
+                    <h3 class="text-xl font-semibold mb-3">200+ preguntas tipo examen</h3>
+                    <p class="text-muted-foreground">Redactadas y calibradas exactamente como en los exámenes del SAS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodología de memorización -->
+    <section id="metodo" class="py-20 bg-muted">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Metodología de memorización avanzada</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-card p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <i class="fas fa-home text-primary mr-3"></i>Palacio de la memoria
+                        </h3>
+                        <p class="text-muted-foreground">Asocia conceptos con lugares familiares para crear rutas mentales que faciliten el recuerdo durante el examen.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <i class="fas fa-font text-primary mr-3"></i>Acrónimos y reglas
+                        </h3>
+                        <p class="text-muted-foreground">Creación de palabras y frases memorables que condensan información compleja en elementos fáciles de recordar.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <i class="fas fa-images text-primary mr-3"></i>Dual coding
+                        </h3>
+                        <p class="text-muted-foreground">Combinación de texto con pictogramas y elementos visuales para activar múltiples canales de memoria.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <i class="fas fa-clock text-primary mr-3"></i>Repetición espaciada
+                        </h3>
+                        <p class="text-muted-foreground">Sistema de flashcards con intervalos optimizados que refuerzan el conocimiento justo antes de olvidarlo.</p>
+                    </div>
+                </div>
+                <div class="text-center bg-primary text-primary-foreground p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">Resultado comprobado</h3>
+                    <p class="text-lg opacity-90">Estas técnicas pueden mejorar la retención hasta un 70% comparado con el estudio tradicional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendario y adaptación -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8">Calendario adaptado a tu convocatoria</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-card p-8 rounded-lg shadow-md">
+                        <i class="fas fa-calendar-check text-primary text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-4">Si la convocatoria sale antes</h3>
+                        <p class="text-muted-foreground">Ajustamos el calendario automáticamente para cubrir todo lo exigido en la convocatoria oficial</p>
+                    </div>
+                    <div class="bg-card p-8 rounded-lg shadow-md">
+                        <i class="fas fa-clipboard-list text-primary text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-4">Si sale después</h3>
+                        <p class="text-muted-foreground">Dedicamos los meses siguientes a simulacros completos para que llegues perfectamente preparado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precio y métodos de pago -->
+    <section id="precio" class="py-20 bg-accent/10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8">Plan de suscripción</h2>
+                <div class="bg-card p-8 rounded-lg shadow-lg max-w-md mx-auto mb-8">
+                    <div class="text-5xl font-bold text-primary mb-4">22,50€<span class="text-lg text-muted-foreground">/mes</span></div>
+                    <p class="text-muted-foreground mb-6">Sin permanencia • Cancela cuando quieras</p>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-3"></i>3 temas mensuales (1 común + 2 específicos)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-3"></i>200+ preguntas tipo examen por tema</li>
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-3"></i>Vídeos explicativos completos</li>
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-3"></i>PDFs, resúmenes y esquemas</li>
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-3"></i>Técnicas de memorización avanzadas</li>
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-3"></i>2 clases extra en directo (grabadas)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-3"></i>Soporte técnico 24/7</li>
+                    </ul>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                    <div class="bg-card p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">PayPal</h3>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_xclick-subscriptions">
+                            <input type="hidden" name="business" value="albamay99@gmail.com">
+                            <input type="hidden" name="item_name" value="LORMAN ACADEMIA - Suscripción TCAE">
+                            <input type="hidden" name="currency_code" value="EUR">
+                            <input type="hidden" name="a3" value="22.50">
+                            <input type="hidden" name="p3" value="1">
+                            <input type="hidden" name="t3" value="M">
+                            <input type="hidden" name="src" value="1">
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                                <i class="fab fa-paypal mr-2"></i>Pagar con PayPal
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="bg-card p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">Bizum</h3>
+                        <button onclick="copyBizum()" id="bizumBtn" class="w-full bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/90 transition-colors mb-2">
+                            <i class="fas fa-copy mr-2"></i>Copiar número Bizum
+                        </button>
+                        <a href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20necesito%20el%20enlace%20de%20Bizum" 
+                           class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors inline-block text-center">
+                            <i class="fab fa-whatsapp mr-2"></i>Pedir enlace por WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <p class="text-muted-foreground mt-6">
+                    ¿Necesitas otros métodos de pago? 
+                    <a href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20necesito%20información%20sobre%20métodos%20de%20pago" class="text-primary hover:underline">Consulta por WhatsApp</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Lo que dicen nuestros estudiantes</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-card p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold mr-4">MG</div>
+                        <div>
+                            <h4 class="font-semibold">María García</h4>
+                            <div class="text-accent">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">"Las técnicas de memorización son increíbles. Nunca pensé que podría recordar tantos conceptos médicos con tanta facilidad."</p>
+                </div>
+                <div class="bg-card p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold mr-4">JL</div>
+                        <div>
+                            <h4 class="font-semibold">Juan López</h4>
+                            <div class="text-accent">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">"Los test son exactamente como el examen real. Me siento mucho más preparado y confiado para la oposición."</p>
+                </div>
+                <div class="bg-card p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold mr-4">AM</div>
+                        <div>
+                            <h4 class="font-semibold">Ana Martín</h4>
+                            <div class="text-accent">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">"El soporte es excepcional. Siempre responden rápido y las clases en directo resuelven todas mis dudas."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-muted">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Preguntas frecuentes</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="bg-card rounded-lg">
+                        <button onclick="toggleFaq(0)" class="w-full p-6 text-left flex justify-between items-center hover:bg-muted/50 transition-colors">
+                            <span class="font-semibold">¿Las clases en directo se graban?</span>
+                            <i class="fas fa-chevron-down transform transition-transform" id="icon-0"></i>
+                        </button>
+                        <div id="answer-0" class="hidden px-6 pb-6">
+                            <p class="text-muted-foreground">Sí, todas las clases en directo se graban automáticamente y se suben al aula virtual para que puedas acceder cuando quieras, las veces que necesites.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-card rounded-lg">
+                        <button onclick="toggleFaq(1)" class="w-full p-6 text-left flex justify-between items-center hover:bg-muted/50 transition-colors">
+                            <span class="font-semibold">¿Puedo darme de baja cuando quiera?</span>
+                            <i class="fas fa-chevron-down transform transition-transform" id="icon-1"></i>
+                        </button>
+                        <div id="answer-1" class="hidden px-6 pb-6">
+                            <p class="text-muted-foreground">Por supuesto. No hay permanencia. Puedes cancelar tu suscripción en cualquier momento sin penalizaciones ni costes adicionales.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-card rounded-lg">
+                        <button onclick="toggleFaq(2)" class="w-full p-6 text-left flex justify-between items-center hover:bg-muted/50 transition-colors">
+                            <span class="font-semibold">¿Qué nivel previo necesito?</span>
+                            <i class="fas fa-chevron-down transform transition-transform" id="icon-2"></i>
+                        </button>
+                        <div id="answer-2" class="hidden px-6 pb-6">
+                            <p class="text-muted-foreground">No necesitas conocimientos previos. Nuestro método está diseñado para llevarte desde cero hasta el nivel necesario para aprobar el TCAE del SAS Andalucía.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-card rounded-lg">
+                        <button onclick="toggleFaq(3)" class="w-full p-6 text-left flex justify-between items-center hover:bg-muted/50 transition-colors">
+                            <span class="font-semibold">¿Cuándo se publican los temas?</span>
+                            <i class="fas fa-chevron-down transform transition-transform" id="icon-3"></i>
+                        </button>
+                        <div id="answer-3" class="hidden px-6 pb-6">
+                            <p class="text-muted-foreground">Los temas se publican el primer día de cada mes. Recibirás una notificación por email y WhatsApp cuando estén disponibles en tu aula virtual.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-card rounded-lg">
+                        <button onclick="toggleFaq(4)" class="w-full p-6 text-left flex justify-between items-center hover:bg-muted/50 transition-colors">
+                            <span class="font-semibold">¿Cómo son exactamente los test?</span>
+                            <i class="fas fa-chevron-down transform transition-transform" id="icon-4"></i>
+                        </button>
+                        <div id="answer-4" class="hidden px-6 pb-6">
+                            <p class="text-muted-foreground">Los test están redactados y calibrados exactamente como en los exámenes oficiales del SAS. Incluyen el mismo formato, dificultad y tipos de preguntas que encontrarás en la oposición real.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-card rounded-lg">
+                        <button onclick="toggleFaq(5)" class="w-full p-6 text-left flex justify-between items-center hover:bg-muted/50 transition-colors">
+                            <span class="font-semibold">¿Incluye simulacros de examen completo?</span>
+                            <i class="fas fa-chevron-down transform transition-transform" id="icon-5"></i>
+                        </button>
+                        <div id="answer-5" class="hidden px-6 pb-6">
+                            <p class="text-muted-foreground">Sí, cuando terminemos todo el temario o se acerque la convocatoria, dedicaremos tiempo completo a simulacros de examen con las mismas condiciones que la prueba oficial.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-20 hero-gradient text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">¿Listo para aprobar tu TCAE?</h2>
+            <p class="text-xl mb-8 opacity-90">Únete a los cientos de estudiantes que ya están preparándose con nosotros</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToPrice()" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all transform hover:scale-105">
+                    Empezar ahora - 22,50€/mes
+                </button>
+                <a href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20tengo%20dudas%20antes%20de%20suscribirme" 
+                   class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-all">
+                    <i class="fab fa-whatsapp mr-2"></i>Resolver dudas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8">Contacto y soporte</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-card p-6 rounded-lg shadow-md">
+                        <i class="fab fa-whatsapp text-green-600 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">WhatsApp</h3>
+                        <p class="text-muted-foreground mb-4">640 786 806</p>
+                        <a href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información" 
+                           class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Enviar mensaje
+                        </a>
+                    </div>
+                    <div class="bg-card p-6 rounded-lg shadow-md">
+                        <i class="fas fa-envelope text-primary text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">Email</h3>
+                        <p class="text-muted-foreground mb-4">manuelaprofesas@gmail.com</p>
+                        <a href="mailto:manuelaprofesas@gmail.com" 
+                           class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                            Enviar email
+                        </a>
+                    </div>
+                    <div class="bg-card p-6 rounded-lg shadow-md">
+                        <i class="fas fa-headset text-accent text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">Soporte técnico</h3>
+                        <p class="text-muted-foreground mb-4">Disponible 24/7</p>
+                        <div class="bg-accent/10 text-accent px-4 py-2 rounded-lg font-semibold">
+                            Siempre activo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="text-2xl font-bold mb-4">LORMAN ACADEMIA</div>
+            <p class="text-gray-400 mb-4">Preparación profesional para TCAE SAS Andalucía</p>
+            <div class="flex justify-center space-x-6 text-gray-400">
+                <span>© 2024 LORMAN ACADEMIA</span>
+                <span>•</span>
+                <span>Todos los derechos reservados</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información" 
+       class="whatsapp-float bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl hover:bg-green-600 transition-all transform hover:scale-110 shadow-lg">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Copy Bizum functionality
+        function copyBizum() {
+            const bizumNumber = "627091426";
+            navigator.clipboard.writeText(bizumNumber).then(function() {
+                const btn = document.getElementById('bizumBtn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check mr-2"></i>¡Número copiado!';
+                btn.classList.add('bg-green-600');
+                btn.classList.remove('bg-primary');
+                
+                setTimeout(function() {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-green-600');
+                    btn.classList.add('bg-primary');
+                }, 2000);
+            });
+        }
+
+        // FAQ Toggle functionality
+        function toggleFaq(index) {
+            const answer = document.getElementById(`answer-${index}`);
+            const icon = document.getElementById(`icon-${index}`);
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Scroll to price section
+        function scrollToPrice() {
+            document.getElementById('precio').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('sticky-nav');
+            } else {
+                nav.classList.remove('sticky-nav');
+            }
+        });
+    </script>
+</body>
+</html>
