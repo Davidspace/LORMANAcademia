@@ -126,14 +126,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Button
                 onClick={() => scrollToSection("precio")}
-                className="bg-accent text-accent-foreground px-8 py-4 text-lg font-semibold hover:bg-accent/90 transition-all transform hover:scale-105"
+                className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-accent text-accent-foreground text-lg font-semibold hover:bg-accent/90 transition-all transform hover:scale-105"
                 data-testid="hero-cta-primary"
               >
                 Empezar por 25 €/mes
               </Button>
               <a
                 href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-all"
+                className="inline-flex items-center justify-center h-12 px-8 border-2 border-white text-white rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-all"
                 data-testid="hero-cta-secondary"
               >
                 <i className="fab fa-whatsapp mr-2"></i>Información gratuita
@@ -706,14 +706,14 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               onClick={() => scrollToSection("precio")}
-              className="bg-accent text-accent-foreground px-8 py-4 text-lg font-semibold hover:bg-accent/90 transition-all transform hover:scale-105"
+              className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-accent text-accent-foreground text-lg font-semibold hover:bg-accent/90 transition-all transform hover:scale-105"
               data-testid="cta-final-primary"
             >
               Empezar ahora - 25€/mes
             </Button>
             <a
               href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20tengo%20dudas%20antes%20de%20suscribirme"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-all"
+              className="inline-flex items-center justify-center h-12 px-8 border-2 border-white text-white rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-all"
               data-testid="cta-final-secondary"
             >
               <i className="fab fa-whatsapp mr-2"></i>Resolver dudas
