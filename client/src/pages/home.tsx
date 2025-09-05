@@ -129,7 +129,7 @@ export default function Home() {
                 className="bg-accent text-accent-foreground px-8 py-4 text-lg font-semibold hover:bg-accent/90 transition-all transform hover:scale-105"
                 data-testid="hero-cta-primary"
               >
-                Empezar por 22,50 €/mes
+                Empezar por 25 €/mes
               </Button>
               <a
                 href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
@@ -392,7 +392,7 @@ export default function Home() {
                   className="text-5xl font-bold text-primary mb-4"
                   data-testid="price-amount"
                 >
-                  22,50€
+                  25€
                   <span className="text-lg text-muted-foreground">/mes</span>
                 </div>
                 <p
@@ -469,7 +469,7 @@ export default function Home() {
                       data-testid="button-paypal-temp"
                     >
                       <i className="fab fa-paypal mr-2"></i>Pagar con PayPal -
-                      22,50€
+                      25€
                     </Button>
                     <p className="text-xs text-muted-foreground mt-2">
                       Procesando configuración...
@@ -709,7 +709,7 @@ export default function Home() {
               className="bg-accent text-accent-foreground px-8 py-4 text-lg font-semibold hover:bg-accent/90 transition-all transform hover:scale-105"
               data-testid="cta-final-primary"
             >
-              Empezar ahora - 22,50€/mes
+              Empezar ahora - 25€/mes
             </Button>
             <a
               href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20tengo%20dudas%20antes%20de%20suscribirme"
