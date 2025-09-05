@@ -479,7 +479,7 @@ export default function Home() {
                   <h3 className="text-xl font-semibold mb-4">Bizum</h3>
                   <Button
                     onClick={copyBizum}
-                    className="w-full bg-primary text-primary-foreground mb-2 hover:bg-primary/90"
+                    className="w-full h-10 bg-primary text-primary-foreground mb-2 hover:bg-primary/90"
                     data-testid="button-copy-bizum"
                   >
                     <i className="fas fa-copy mr-2"></i>Copiar número Bizum
@@ -492,7 +492,7 @@ export default function Home() {
                   <h3 className="text-xl font-semibold mb-4">Transferencia bancaria</h3>
                   <a
                     href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20quiero%20pagar%20por%20transferencia.%20Por%20favor%2C%20enviadme%20el%20IBAN%20y%20concepto."
-                    className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors inline-block text-center"
+                    className="w-full h-10 inline-flex items-center justify-center px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
                     data-testid="button-transfer-whatsapp"
                   >
                     <i className="fab fa-whatsapp mr-2"></i>Pedir datos bancarios
