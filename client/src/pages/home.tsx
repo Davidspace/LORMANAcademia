@@ -470,9 +470,6 @@ export default function Home() {
                     >
                       <i className="fab fa-paypal mr-2"></i>Pagar con PayPal
                     </Button>
-                    <p className="text-xs text-muted-foreground mt-2">
-                      Procesando configuración...
-                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -500,9 +497,6 @@ export default function Home() {
               <Card data-testid="payment-transfer">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Transferencia bancaria</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Paga por transferencia SEPA. Te enviamos el IBAN y el concepto.
-                  </p>
                   <a
                     href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20quiero%20pagar%20por%20transferencia.%20Por%20favor%2C%20enviadme%20el%20IBAN%20y%20concepto."
                     className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors inline-block text-center"
