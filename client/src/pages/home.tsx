@@ -136,7 +136,7 @@ export default function Home() {
                 className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-all"
                 data-testid="hero-cta-secondary"
               >
-                <i className="fab fa-whatsapp mr-2"></i>Información gratis
+                <i className="fab fa-whatsapp mr-2"></i>Información gratuita
               </a>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm opacity-80">
@@ -322,9 +322,11 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Calendario y adaptación */}
-      <section id="metodo" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-950 dark:to-indigo-900">
+      <section
+        id="metodo"
+        className="py-20 calendar-bg"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2
@@ -362,7 +364,9 @@ export default function Home() {
             <div className="bg-accent/20 border border-accent/30 rounded-lg p-6">
               <p className="text-muted-foreground text-sm">
                 <i className="fas fa-info-circle text-accent mr-2"></i>
-                <strong>Tiempo estimado:</strong> 10 meses es la duración aproximada hasta que se publique la convocatoria oficial del SAS Andalucía
+                <strong>Tiempo estimado:</strong> 10 meses es la duración
+                aproximada hasta que se publique la convocatoria oficial del SAS
+                Andalucía
               </p>
             </div>
           </div>
@@ -370,7 +374,7 @@ export default function Home() {
       </section>
 
       {/* Precio y métodos de pago */}
-      <section id="precio" className="py-20 bg-accent/10">
+      <section id="precio" className="py-20 pricing-bg">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2
@@ -500,7 +504,7 @@ export default function Home() {
               className="text-muted-foreground mt-6"
               data-testid="payment-other-methods"
             >
-              ¿Necesitas otros métodos de pago? <br/>
+              ¿Necesitas otros métodos de pago? <br />
               <a
                 href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20necesito%20información%20sobre%20métodos%20de%20pago"
                 className="text-primary hover:underline"
@@ -514,7 +518,7 @@ export default function Home() {
       </section>
 
       {/* Testimonios */}
-      <section className="py-20 dynamic-bg">
+      <section className="py-20 testimonials-bg">
         <div className="container mx-auto px-4">
           <h2
             className="text-4xl font-bold text-center mb-16"
@@ -579,7 +583,10 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
+      <section
+        id="faq"
+        className="py-20 faq-bg"
+      >
         <div className="container mx-auto px-4">
           <h2
             className="text-4xl font-bold text-center mb-16"
@@ -693,7 +700,7 @@ export default function Home() {
             className="text-xl mb-8 opacity-90"
             data-testid="cta-final-subtitle"
           >
-            Únete a los cientos de estudiantes que ya están preparándose con
+            Únete a las decenas de opositores que ya están preparándose con
             nosotros
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -716,7 +723,7 @@ export default function Home() {
       </section>
 
       {/* Contacto */}
-      <section id="contacto" className="py-20">
+      <section id="contacto" className="py-20 contact-bg">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2
@@ -797,7 +804,7 @@ export default function Home() {
             className="flex justify-center space-x-6 text-gray-400"
             data-testid="footer-copyright"
           >
-            <span>© 2024 LORMAN ACADEMIA</span>
+            <span>© 2025 LORMAN ACADEMIA</span>
             <span>•</span>
             <span>Todos los derechos reservados</span>
           </div>
