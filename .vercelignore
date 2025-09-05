@@ -8,8 +8,4 @@ repl.nix
 *.log
 dist/index.js
 drizzle.config.ts
-tsconfig.json
-postcss.config.js
-tailwind.config.ts
 *.md
-components.json
