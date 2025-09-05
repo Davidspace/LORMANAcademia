@@ -120,7 +120,7 @@ export default function Home() {
               className="text-xl md:text-2xl mb-8 opacity-90"
               data-testid="hero-subtitle"
             >
-              Preparación completa con técnicas de memorización avanzadas, 200+
+              Preparación completa con técnicas de memorización avanzadas, +200
               preguntas por tema y clases en directo
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -192,7 +192,7 @@ export default function Home() {
                 3
               </div>
               <h3 className="text-xl font-semibold mb-3">
-                200+ preguntas por tema
+                +200 preguntas por tema
               </h3>
               <p className="text-muted-foreground">
                 2 autoevaluaciones por tema con mínimo 100 preguntas cada una,
@@ -310,7 +310,7 @@ export default function Home() {
                   <i className="fas fa-question-circle"></i>
                 </div>
                 <h3 className="text-xl font-semibold mb-3">
-                  200+ preguntas tipo examen por tema
+                  +200 preguntas tipo examen por tema
                 </h3>
                 <p className="text-muted-foreground">
                   Redactadas y calibradas exactamente como en los exámenes del
@@ -413,14 +413,14 @@ export default function Home() {
                     className="flex items-center"
                     data-testid="feature-questions"
                   >
-                    <i className="fas fa-check text-primary mr-3"></i>200+
+                    <i className="fas fa-check text-primary mr-3"></i>+200
                     preguntas tipo examen por tema
                   </li>
                   <li
                     className="flex items-center"
                     data-testid="feature-total-questions"
                   >
-                    <i className="fas fa-check text-primary mr-3"></i>8000+
+                    <i className="fas fa-check text-primary mr-3"></i>+8000
                     preguntas en total
                   </li>
                   <li
