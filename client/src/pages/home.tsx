@@ -173,8 +173,8 @@ export default function Home() {
               </h3>
               <p className="text-muted-foreground">
                 Cada mes recibes 3 temas nuevos: 1 común + 2 específicos del
-                temario TCAE Andalucía junto a sus clases explicativas y sus
-                esquemas
+                temario TCAE Andalucía junto a clases explicativas,
+                esquemas y presentaciones
               </p>
             </div>
             <div className="text-center" data-testid="step-2">
@@ -333,7 +333,7 @@ export default function Home() {
               className="text-4xl font-bold mb-8"
               data-testid="section-calendario-title"
             >
-              Calendario adaptado para 10 meses de temario
+              Calendario adaptado para 12 meses de temario
             </h2>
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="shadow-md" data-testid="calendar-before">
@@ -364,7 +364,7 @@ export default function Home() {
             <div className="bg-accent/20 border border-accent/30 rounded-lg p-6">
               <p className="text-muted-foreground text-sm">
                 <i className="fas fa-info-circle text-accent mr-2"></i>
-                <strong>Tiempo estimado:</strong> 10 meses es la duración
+                <strong>Tiempo estimado:</strong> 12 meses es la duración
                 aproximada hasta que se publique la convocatoria oficial del SAS
                 Andalucía
               </p>
@@ -446,7 +446,7 @@ export default function Home() {
                     data-testid="feature-classes"
                   >
                     <i className="fas fa-check text-primary mr-3"></i>2 clases
-                    extra en directo (grabadas)
+                    extra en directo
                   </li>
                   <li
                     className="flex items-center"
