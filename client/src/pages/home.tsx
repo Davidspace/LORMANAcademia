@@ -460,8 +460,8 @@ export default function Home() {
             </Card>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <Card data-testid="payment-paypal">
-                <CardContent className="p-6">
+              <Card data-testid="payment-paypal" className="min-h-[200px]">
+                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
                   <h3 className="text-xl font-semibold mb-4">PayPal</h3>
                   <div className="w-full">
                     <Button
@@ -474,8 +474,8 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card data-testid="payment-bizum">
-                <CardContent className="p-6">
+              <Card data-testid="payment-bizum" className="min-h-[200px]">
+                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
                   <h3 className="text-xl font-semibold mb-4">Bizum</h3>
                   <Button
                     onClick={copyBizum}
@@ -484,18 +484,11 @@ export default function Home() {
                   >
                     <i className="fas fa-copy mr-2"></i>Copiar número Bizum
                   </Button>
-                  <a
-                    href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20necesito%20el%20enlace%20de%20Bizum"
-                    className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors inline-block text-center"
-                    data-testid="button-bizum-whatsapp"
-                  >
-                    <i className="fab fa-whatsapp mr-2"></i>Pedir enlace
-                  </a>
                 </CardContent>
               </Card>
 
-              <Card data-testid="payment-transfer">
-                <CardContent className="p-6">
+              <Card data-testid="payment-transfer" className="min-h-[200px]">
+                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
                   <h3 className="text-xl font-semibold mb-4">Transferencia bancaria</h3>
                   <a
                     href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20quiero%20pagar%20por%20transferencia.%20Por%20favor%2C%20enviadme%20el%20IBAN%20y%20concepto."
