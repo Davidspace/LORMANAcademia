@@ -31,30 +31,15 @@ export default function PayPalButton({
   intent,
 }: PayPalButtonProps) {
   const createOrder = async () => {
-    const orderPayload = {
-      amount: amount,
-      currency: currency,
-      intent: intent,
-    };
-    const response = await fetch("/order", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(orderPayload),
-    });
-    const output = await response.json();
-    return { orderId: output.id };
+    // For static deployment, redirect to WhatsApp instead of PayPal API
+    const message = `Hola LORMAN ACADEMIA, quiero suscribirme al servicio por ${amount}€ al mes. ¿Podrían ayudarme con el proceso de pago?`;
+    window.open(`https://wa.me/34640786806?text=${encodeURIComponent(message)}`, '_blank');
+    return { orderId: 'static-deployment' };
   };
 
   const captureOrder = async (orderId: string) => {
-    const response = await fetch(`/order/${orderId}/capture`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-
-    return data;
+    // For static deployment, no capture needed
+    return { status: 'COMPLETED' };
   };
 
   const onApprove = async (data: any) => {
@@ -74,16 +59,19 @@ export default function PayPalButton({
   useEffect(() => {
     const loadPayPalSDK = async () => {
       try {
-        if (!(window as any).paypal) {
-          const script = document.createElement("script");
-          script.src = import.meta.env.PROD
-            ? "https://www.paypal.com/web-sdk/v6/core"
-            : "https://www.sandbox.paypal.com/web-sdk/v6/core";
-          script.async = true;
-          script.onload = () => initPayPal();
-          document.body.appendChild(script);
-        } else {
+        // For static deployment, skip PayPal SDK loading and just setup button
+        if (import.meta.env.PROD) {
           await initPayPal();
+        } else {
+          if (!(window as any).paypal) {
+            const script = document.createElement("script");
+            script.src = "https://www.sandbox.paypal.com/web-sdk/v6/core";
+            script.async = true;
+            script.onload = () => initPayPal();
+            document.body.appendChild(script);
+          } else {
+            await initPayPal();
+          }
         }
       } catch (e) {
         console.error("Failed to load PayPal SDK", e);
@@ -94,30 +82,9 @@ export default function PayPalButton({
   }, []);
   const initPayPal = async () => {
     try {
-      const clientToken: string = await fetch("/setup")
-        .then((res) => res.json())
-        .then((data) => {
-          return data.clientToken;
-        });
-      const sdkInstance = await (window as any).paypal.createInstance({
-        clientToken,
-        components: ["paypal-payments"],
-      });
-
-      const paypalCheckout =
-            sdkInstance.createPayPalOneTimePaymentSession({
-              onApprove,
-              onCancel,
-              onError,
-            });
-
       const onClick = async () => {
         try {
-          const checkoutOptionsPromise = createOrder();
-          await paypalCheckout.start(
-            { paymentFlow: "auto" },
-            checkoutOptionsPromise,
-          );
+          await createOrder();
         } catch (e) {
           console.error(e);
         }
