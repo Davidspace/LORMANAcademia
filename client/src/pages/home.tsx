@@ -120,8 +120,8 @@ export default function Home() {
               className="text-xl md:text-2xl mb-8 opacity-90"
               data-testid="hero-subtitle"
             >
-              Preparación completa con técnicas de memorización avanzadas, +200
-              preguntas por tema y clases en directo
+              Preparación completa con clases en directo, +200
+              preguntas por tema y técnicas de memorización avanzadas
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Button
