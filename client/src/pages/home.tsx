@@ -459,7 +459,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <Card data-testid="payment-paypal">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">PayPal</h3>
@@ -468,8 +468,7 @@ export default function Home() {
                       className="w-full bg-blue-600 text-white hover:bg-blue-700"
                       data-testid="button-paypal-temp"
                     >
-                      <i className="fab fa-paypal mr-2"></i>Pagar con PayPal -
-                      25€
+                      <i className="fab fa-paypal mr-2"></i>Pagar con PayPal
                     </Button>
                     <p className="text-xs text-muted-foreground mt-2">
                       Procesando configuración...
@@ -493,8 +492,23 @@ export default function Home() {
                     className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors inline-block text-center"
                     data-testid="button-bizum-whatsapp"
                   >
-                    <i className="fab fa-whatsapp mr-2"></i>Pedir enlace por
-                    WhatsApp
+                    <i className="fab fa-whatsapp mr-2"></i>Pedir enlace
+                  </a>
+                </CardContent>
+              </Card>
+
+              <Card data-testid="payment-transfer">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-4">Transferencia bancaria</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Paga por transferencia SEPA. Te enviamos el IBAN y el concepto.
+                  </p>
+                  <a
+                    href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20quiero%20pagar%20por%20transferencia.%20Por%20favor%2C%20enviadme%20el%20IBAN%20y%20concepto."
+                    className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors inline-block text-center"
+                    data-testid="button-transfer-whatsapp"
+                  >
+                    <i className="fab fa-whatsapp mr-2"></i>Pedir datos bancarios
                   </a>
                 </CardContent>
               </Card>
