@@ -396,60 +396,60 @@ export default function Home() {
                   <span className="text-lg text-muted-foreground">/mes</span>
                 </div>
                 <p
-                  className="text-muted-foreground mb-4"
+                  className="text-muted-foreground mb-6"
                   data-testid="price-terms"
                 >
                   Sin permanencia • Cancela cuando quieras
                 </p>
-                <ul className="text-center space-y-3">
+                <ul className="text-left space-y-3 mb-8">
                   <li
-                    className="flex items-center justify-center"
+                    className="flex items-center"
                     data-testid="feature-themes"
                   >
                     <i className="fas fa-check text-primary mr-3"></i>3 temas
                     mensuales (1 común + 2 específicos)
                   </li>
                   <li
-                    className="flex items-center justify-center"
+                    className="flex items-center"
                     data-testid="feature-questions"
                   >
                     <i className="fas fa-check text-primary mr-3"></i>+200
                     preguntas tipo examen por tema
                   </li>
                   <li
-                    className="flex items-center justify-center"
+                    className="flex items-center"
                     data-testid="feature-total-questions"
                   >
                     <i className="fas fa-check text-primary mr-3"></i>+8000
                     preguntas en total
                   </li>
                   <li
-                    className="flex items-center justify-center"
+                    className="flex items-center"
                     data-testid="feature-videos"
                   >
                     <i className="fas fa-check text-primary mr-3"></i>Vídeos
                     explicativos completos
                   </li>
-                  <li className="flex items-center justify-center" data-testid="feature-pdfs">
+                  <li className="flex items-center" data-testid="feature-pdfs">
                     <i className="fas fa-check text-primary mr-3"></i>PDFs,
                     resúmenes y esquemas
                   </li>
                   <li
-                    className="flex items-center justify-center"
+                    className="flex items-center"
                     data-testid="feature-techniques"
                   >
                     <i className="fas fa-check text-primary mr-3"></i>Técnicas
                     de memorización avanzadas
                   </li>
                   <li
-                    className="flex items-center justify-center"
+                    className="flex items-center"
                     data-testid="feature-classes"
                   >
                     <i className="fas fa-check text-primary mr-3"></i>2 clases
                     extra en directo
                   </li>
                   <li
-                    className="flex items-center justify-center"
+                    className="flex items-center"
                     data-testid="feature-support"
                   >
                     <i className="fas fa-check text-primary mr-3"></i>Soporte
