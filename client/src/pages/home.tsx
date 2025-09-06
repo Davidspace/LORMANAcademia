@@ -733,9 +733,9 @@ export default function Home() {
             >
               Contacto y soporte
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="shadow-md" data-testid="contact-whatsapp">
-                <CardContent className="p-6 text-center">
+            <div className="grid md:grid-cols-3 gap-8 items-stretch">
+              <Card className="shadow-md h-full" data-testid="contact-whatsapp">
+                <CardContent className="p-6 text-center flex flex-col h-full">
                   <i className="fab fa-whatsapp text-green-600 text-3xl mb-4"></i>
                   <h3 className="text-xl font-semibold mb-3">WhatsApp</h3>
                   <p
@@ -746,15 +746,15 @@ export default function Home() {
                   </p>
                   <a
                     href="https://wa.me/34640786806?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
-                    className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+                    className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors mt-auto"
                     data-testid="button-contact-whatsapp"
                   >
                     Enviar mensaje
                   </a>
                 </CardContent>
               </Card>
-              <Card className="shadow-md" data-testid="contact-email">
-                <CardContent className="p-6 text-center">
+              <Card className="shadow-md h-full" data-testid="contact-email">
+                <CardContent className="p-6 text-center flex flex-col h-full">
                   <i className="fas fa-envelope text-primary text-3xl mb-4"></i>
                   <h3 className="text-xl font-semibold mb-3">Email</h3>
                   <p
@@ -765,22 +765,22 @@ export default function Home() {
                   </p>
                   <a
                     href="mailto:manuelaprofesas@gmail.com"
-                    className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+                    className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors mt-auto"
                     data-testid="button-contact-email"
                   >
                     Enviar email
                   </a>
                 </CardContent>
               </Card>
-              <Card className="shadow-md" data-testid="contact-support">
-                <CardContent className="p-6 text-center">
+              <Card className="shadow-md h-full" data-testid="contact-support">
+                <CardContent className="p-6 text-center flex flex-col h-full">
                   <i className="fas fa-headset text-accent text-3xl mb-4"></i>
                   <h3 className="text-xl font-semibold mb-3">
                     Soporte técnico
                   </h3>
                   <p className="text-muted-foreground mb-4">Disponible 24/7</p>
                   <div
-                    className="bg-accent/10 text-accent px-4 py-2 rounded-lg font-semibold"
+                    className="bg-accent/10 text-accent px-4 py-2 rounded-lg font-semibold mt-auto"
                     data-testid="support-status"
                   >
                     Siempre activo
