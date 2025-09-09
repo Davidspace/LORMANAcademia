@@ -78,7 +78,7 @@ export default function Home() {
                 className="hover:text-primary transition-colors"
                 data-testid="nav-precio"
               >
-                Subscripción
+                Suscripción
               </button>
               <button
                 onClick={() => scrollToSection("faq")}
