@@ -78,7 +78,7 @@ export default function Home() {
                 className="hover:text-primary transition-colors"
                 data-testid="nav-precio"
               >
-                Precio
+                Subscripción
               </button>
               <button
                 onClick={() => scrollToSection("faq")}
@@ -124,13 +124,6 @@ export default function Home() {
               preguntas por tema y técnicas de memorización avanzadas
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button
-                onClick={() => scrollToSection("precio")}
-                className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-accent text-accent-foreground text-lg font-semibold hover:bg-accent/90 transition-all transform hover:scale-105"
-                data-testid="hero-cta-primary"
-              >
-                Empezar por 25 €/mes
-              </Button>
               <a
                 href="https://wa.me/34627091426?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
                 className="inline-flex items-center justify-center h-12 px-8 border-2 border-white text-white rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-all"
