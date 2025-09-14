@@ -24,7 +24,7 @@ export default function Home() {
   }, []);
 
   const copyBizum = () => {
-    const bizumNumber = "627091426";
+    const bizumNumber = "640828654";
     navigator.clipboard.writeText(bizumNumber).then(() => {
       toast({
         title: "¡Número copiado!",
@@ -96,7 +96,7 @@ export default function Home() {
               </button>
             </div>
             <a
-              href="https://wa.me/34627091426?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
+              href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
               className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
               data-testid="nav-whatsapp"
             >
@@ -125,7 +125,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <a
-                href="https://wa.me/34627091426?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
+                href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
                 className="inline-flex items-center justify-center h-12 px-8 border-2 border-white text-white rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-all"
                 data-testid="hero-cta-secondary"
               >
@@ -484,7 +484,7 @@ export default function Home() {
                 <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
                   <h3 className="text-xl font-semibold mb-4">Transferencia bancaria</h3>
                   <a
-                    href="https://wa.me/34627091426?text=Hola%20LORMAN%20ACADEMIA%2C%20quiero%20pagar%20por%20transferencia.%20Por%20favor%2C%20enviadme%20el%20IBAN%20y%20concepto."
+                    href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20quiero%20pagar%20por%20transferencia.%20Por%20favor%2C%20enviadme%20el%20IBAN%20y%20concepto."
                     className="w-full h-10 inline-flex items-center justify-center px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
                     data-testid="button-transfer-whatsapp"
                   >
@@ -500,7 +500,7 @@ export default function Home() {
             >
               ¿Necesitas otros métodos de pago? <br />
               <a
-                href="https://wa.me/34627091426?text=Hola%20LORMAN%20ACADEMIA%2C%20necesito%20información%20sobre%20métodos%20de%20pago"
+                href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20necesito%20información%20sobre%20métodos%20de%20pago"
                 className="text-primary hover:underline"
                 data-testid="link-payment-whatsapp"
               >
@@ -706,7 +706,7 @@ export default function Home() {
               Empezar ahora - 25€/mes
             </Button>
             <a
-              href="https://wa.me/34627091426?text=Hola%20LORMAN%20ACADEMIA%2C%20tengo%20dudas%20antes%20de%20suscribirme"
+              href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20tengo%20dudas%20antes%20de%20suscribirme"
               className="inline-flex items-center justify-center h-12 px-8 border-2 border-white text-white rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-all"
               data-testid="cta-final-secondary"
             >
@@ -735,10 +735,10 @@ export default function Home() {
                     className="text-muted-foreground mb-4"
                     data-testid="contact-whatsapp-number"
                   >
-                    627 09 14 26
+                    640 828 654
                   </p>
                   <a
-                    href="https://wa.me/34627091426?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
+                    href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
                     className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors mt-auto"
                     data-testid="button-contact-whatsapp"
                   >
@@ -807,7 +807,7 @@ export default function Home() {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/34627091426?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
+        href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
         className="whatsapp-float bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl hover:bg-green-600 transition-all transform hover:scale-110 shadow-lg"
         data-testid="whatsapp-float"
       >
