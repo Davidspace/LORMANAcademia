@@ -472,19 +472,17 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto items-start">
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto items-stretch">
               {/* PayPal */}
-              <Card data-testid="payment-paypal" className="self-start">
-                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
-                  <h3 className="text-xl font-semibold mb-2">PayPal</h3>
-                  <div className="w-full">
-                    <Button
-                      className="w-full bg-blue-600 text-white hover:bg-blue-700"
-                      data-testid="button-paypal-temp"
-                    >
-                      <i className="fab fa-paypal mr-2"></i>Pagar con PayPal
-                    </Button>
-                  </div>
+              <Card data-testid="payment-paypal" className="self-stretch">
+                <CardContent className="p-6 flex flex-col items-center justify-between gap-4 text-center min-h-[260px]">
+                  <h3 className="text-xl font-semibold">PayPal</h3>
+                  <Button
+                    className="w-full h-10 bg-blue-600 text-white hover:bg-blue-700"
+                    data-testid="button-paypal-temp"
+                  >
+                    <i className="fab fa-paypal mr-2"></i>Pagar con PayPal
+                  </Button>
                 </CardContent>
               </Card>
 
@@ -510,12 +508,12 @@ export default function Home() {
               )}
 
               {/* Bizum */}
-              <Card data-testid="payment-bizum" className="self-start">
-                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
-                  <h3 className="text-xl font-semibold mb-2">Bizum</h3>
+              <Card data-testid="payment-bizum" className="self-stretch">
+                <CardContent className="p-6 flex flex-col items-center justify-between gap-4 text-center min-h-[260px]">
+                  <h3 className="text-xl font-semibold">Bizum</h3>
                   <Button
                     onClick={copyBizum}
-                    className="w-full h-10 bg-primary text-primary-foreground hover:bg-primary/90"
+                    className="w-full h-10 bg-emerald-600 text-white hover:bg-emerald-700"
                     data-testid="button-copy-bizum"
                   >
                     <i className="fas fa-copy mr-2"></i>Copiar número Bizum
@@ -524,30 +522,36 @@ export default function Home() {
               </Card>
 
               {/* Transferencia */}
-              <Card data-testid="payment-transfer" className="h-full">
-                <CardContent className="p-6 flex flex-col items-center justify-between gap-3 text-center h-full">
-                  <h3 className="text-xl font-semibold">Transferencia bancaria</h3>
-                  <div className="w-full text-sm bg-muted/40 rounded-md p-3 text-left">
-                    <div><strong>IBAN:</strong> {IBAN}</div>
-                    <div><strong>Titular:</strong> {TITULAR}</div>
-                    <div><strong>Concepto:</strong> {CONCEPTO}</div>
-                  </div>
-                  <div className="w-full flex flex-col gap-2">
-                    <Button
+              <Card data-testid="payment-transfer" className="self-stretch">
+                <CardContent className="p-6 flex flex-col items-center justify-between gap-4 text-center min-h-[260px]">
+                  <h3 className="text-xl font-semibold">Transferencia</h3>
+                  <details className="w-full text-left bg-muted/40 rounded-md p-3">
+                    <summary className="cursor-pointer text-sm text-muted-foreground hover:text-foreground select-none">Ver detalles de transferencia</summary>
+                    <div className="mt-3 text-sm space-y-1">
+                      <div><strong>IBAN:</strong> {IBAN}</div>
+                      <div><strong>Titular:</strong> {TITULAR}</div>
+                      <div><strong>Concepto:</strong> Tu nombre completo</div>
+                    </div>
+                  </details>
+                  <div className="w-full flex items-center justify-between text-sm text-muted-foreground">
+                    <button
                       onClick={copyIBAN}
-                      className="w-full h-10 bg-primary text-primary-foreground hover:bg-primary/90"
+                      className="inline-flex items-center gap-2 hover:text-foreground"
                       data-testid="button-copy-iban"
+                      type="button"
                     >
-                      <i className="fas fa-copy mr-2"></i>Copiar datos bancarios
-                    </Button>
+                      <i className="fas fa-copy"></i>
+                      Copiar datos
+                    </button>
                     <a
                       href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20acabo%20de%20hacer%20la%20transferencia%20para%20la%20suscripci%C3%B3n.%20Adjunto%20justificante."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full h-10 inline-flex items-center justify-center px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                      className="inline-flex items-center gap-2 hover:text-foreground"
                       data-testid="button-transfer-justificante"
                     >
-                      <i className="fab fa-whatsapp mr-2"></i>Enviar justificante
+                      <i className="fab fa-whatsapp"></i>
+                      Enviar justificante
                     </a>
                   </div>
                 </CardContent>
