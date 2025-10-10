@@ -474,8 +474,8 @@ export default function Home() {
 
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {/* PayPal */}
-              <Card data-testid="payment-paypal" className="h-full">
-                <CardContent className="p-6 flex flex-col items-center justify-between gap-4 text-center h-full">
+              <Card data-testid="payment-paypal">
+                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
                   <h3 className="text-xl font-semibold mb-2">PayPal</h3>
                   <div className="w-full">
                     <Button
@@ -510,8 +510,8 @@ export default function Home() {
               )}
 
               {/* Bizum */}
-              <Card data-testid="payment-bizum" className="h-full">
-                <CardContent className="p-6 flex flex-col items-center justify-between gap-4 text-center h-full">
+              <Card data-testid="payment-bizum">
+                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
                   <h3 className="text-xl font-semibold mb-2">Bizum</h3>
                   <Button
                     onClick={copyBizum}
