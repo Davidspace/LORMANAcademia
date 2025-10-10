@@ -33,6 +33,23 @@ export default function Home() {
     });
   };
 
+  // Ajusta estos datos a los reales
+  const IBAN = "ES00 0000 0000 0000 0000 0000"; // Sustituir por tu IBAN real
+  const TITULAR = "LORMAN ACADEMIA"; // O el nombre del titular de la cuenta
+  const CONCEPTO = "Suscripción LORMAN - Tu Nombre y Apellidos"; // Guía para el alumno
+
+  const copyIBAN = () => {
+    const data = `IBAN: ${IBAN}\nTitular: ${TITULAR}\nConcepto: ${CONCEPTO}`;
+    navigator.clipboard.writeText(data).then(() => {
+      toast({
+        title: "¡Datos copiados!",
+        description: "IBAN, titular y concepto copiados al portapapeles",
+      });
+    });
+  };
+
+  
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -452,10 +469,11 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              {/* PayPal */}
               <Card data-testid="payment-paypal" className="min-h-[150px]">
                 <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
-                  <h3 className="text-xl font-semibold mb-4">PayPal</h3>
+                  <h3 className="text-xl font-semibold mb-2">PayPal</h3>
                   <div className="w-full">
                     <Button
                       className="w-full bg-blue-600 text-white hover:bg-blue-700"
@@ -467,12 +485,32 @@ export default function Home() {
                 </CardContent>
               </Card>
 
+              {/* Tarjeta (Stripe) */}
+              <Card data-testid="payment-card" className="min-h-[150px]">
+                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
+                  <h3 className="text-xl font-semibold mb-2">Tarjeta (Stripe)</h3>
+                  <a
+                    href="https://buy.stripe.com/XXXXXXXXXXXX" // Sustituye por tu Payment Link de Stripe
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full h-10 inline-flex items-center justify-center px-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                    data-testid="button-card-stripe"
+                  >
+                    <i className="fas fa-credit-card mr-2"></i>Pagar con tarjeta
+                  </a>
+                  <p className="text-xs text-muted-foreground">
+                    Pago seguro con Visa/Mastercard. Sin guardar datos de tarjeta en nuestra web.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Bizum */}
               <Card data-testid="payment-bizum" className="min-h-[150px]">
                 <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
-                  <h3 className="text-xl font-semibold mb-4">Bizum</h3>
+                  <h3 className="text-xl font-semibold mb-2">Bizum</h3>
                   <Button
                     onClick={copyBizum}
-                    className="w-full h-10 bg-primary text-primary-foreground mb-2 hover:bg-primary/90"
+                    className="w-full h-10 bg-primary text-primary-foreground hover:bg-primary/90"
                     data-testid="button-copy-bizum"
                   >
                     <i className="fas fa-copy mr-2"></i>Copiar número Bizum
@@ -480,16 +518,33 @@ export default function Home() {
                 </CardContent>
               </Card>
 
+              {/* Transferencia */}
               <Card data-testid="payment-transfer" className="min-h-[150px]">
-                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
-                  <h3 className="text-xl font-semibold mb-4">Transferencia bancaria</h3>
-                  <a
-                    href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20quiero%20pagar%20por%20transferencia.%20Por%20favor%2C%20enviadme%20el%20IBAN%20y%20concepto."
-                    className="w-full h-10 inline-flex items-center justify-center px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
-                    data-testid="button-transfer-whatsapp"
-                  >
-                    <i className="fab fa-whatsapp mr-2"></i>Pedir datos bancarios
-                  </a>
+                <CardContent className="p-6 flex flex-col items-center justify-center gap-3 text-center">
+                  <h3 className="text-xl font-semibold">Transferencia bancaria</h3>
+                  <div className="w-full text-sm bg-muted/40 rounded-md p-3 text-left">
+                    <div><strong>IBAN:</strong> {IBAN}</div>
+                    <div><strong>Titular:</strong> {TITULAR}</div>
+                    <div><strong>Concepto:</strong> {CONCEPTO}</div>
+                  </div>
+                  <div className="w-full flex flex-col gap-2">
+                    <Button
+                      onClick={copyIBAN}
+                      className="w-full h-10 bg-primary text-primary-foreground hover:bg-primary/90"
+                      data-testid="button-copy-iban"
+                    >
+                      <i className="fas fa-copy mr-2"></i>Copiar datos bancarios
+                    </Button>
+                    <a
+                      href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20acabo%20de%20hacer%20la%20transferencia%20para%20la%20suscripci%C3%B3n.%20Adjunto%20justificante."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full h-10 inline-flex items-center justify-center px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                      data-testid="button-transfer-justificante"
+                    >
+                      <i className="fab fa-whatsapp mr-2"></i>Enviar justificante
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             </div>
