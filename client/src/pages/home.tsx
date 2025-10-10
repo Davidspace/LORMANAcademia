@@ -48,6 +48,9 @@ export default function Home() {
     });
   };
 
+  // Mostrar/ocultar pagos con tarjeta (Stripe)
+  const SHOW_STRIPE = false;
+
   
 
   const scrollToSection = (sectionId: string) => {
@@ -469,10 +472,10 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {/* PayPal */}
-              <Card data-testid="payment-paypal" className="min-h-[150px]">
-                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
+              <Card data-testid="payment-paypal" className="h-full">
+                <CardContent className="p-6 flex flex-col items-center justify-between gap-4 text-center h-full">
                   <h3 className="text-xl font-semibold mb-2">PayPal</h3>
                   <div className="w-full">
                     <Button
@@ -485,28 +488,30 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              {/* Tarjeta (Stripe) */}
-              <Card data-testid="payment-card" className="min-h-[150px]">
-                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
-                  <h3 className="text-xl font-semibold mb-2">Tarjeta (Stripe)</h3>
-                  <a
-                    href="https://buy.stripe.com/XXXXXXXXXXXX" // Sustituye por tu Payment Link de Stripe
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full h-10 inline-flex items-center justify-center px-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-                    data-testid="button-card-stripe"
-                  >
-                    <i className="fas fa-credit-card mr-2"></i>Pagar con tarjeta
-                  </a>
-                  <p className="text-xs text-muted-foreground">
-                    Pago seguro con Visa/Mastercard. Sin guardar datos de tarjeta en nuestra web.
-                  </p>
-                </CardContent>
-              </Card>
+              {/* Tarjeta (Stripe) - Oculta temporalmente */}
+              {SHOW_STRIPE && (
+                <Card data-testid="payment-card" className="h-full">
+                  <CardContent className="p-6 flex flex-col items-center justify-between gap-4 text-center h-full">
+                    <h3 className="text-xl font-semibold mb-2">Tarjeta (Stripe)</h3>
+                    <a
+                      href="https://buy.stripe.com/XXXXXXXXXXXX"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full h-10 inline-flex items-center justify-center px-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                      data-testid="button-card-stripe"
+                    >
+                      <i className="fas fa-credit-card mr-2"></i>Pagar con tarjeta
+                    </a>
+                    <p className="text-xs text-muted-foreground">
+                      Pago seguro con Visa/Mastercard. Sin guardar datos de tarjeta en nuestra web.
+                    </p>
+                  </CardContent>
+                </Card>
+              )}
 
               {/* Bizum */}
-              <Card data-testid="payment-bizum" className="min-h-[150px]">
-                <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
+              <Card data-testid="payment-bizum" className="h-full">
+                <CardContent className="p-6 flex flex-col items-center justify-between gap-4 text-center h-full">
                   <h3 className="text-xl font-semibold mb-2">Bizum</h3>
                   <Button
                     onClick={copyBizum}
@@ -519,8 +524,8 @@ export default function Home() {
               </Card>
 
               {/* Transferencia */}
-              <Card data-testid="payment-transfer" className="min-h-[150px]">
-                <CardContent className="p-6 flex flex-col items-center justify-center gap-3 text-center">
+              <Card data-testid="payment-transfer" className="h-full">
+                <CardContent className="p-6 flex flex-col items-center justify-between gap-3 text-center h-full">
                   <h3 className="text-xl font-semibold">Transferencia bancaria</h3>
                   <div className="w-full text-sm bg-muted/40 rounded-md p-3 text-left">
                     <div><strong>IBAN:</strong> {IBAN}</div>
