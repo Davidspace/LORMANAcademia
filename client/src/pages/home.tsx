@@ -472,9 +472,9 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto items-start">
               {/* PayPal */}
-              <Card data-testid="payment-paypal">
+              <Card data-testid="payment-paypal" className="self-start">
                 <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
                   <h3 className="text-xl font-semibold mb-2">PayPal</h3>
                   <div className="w-full">
@@ -510,7 +510,7 @@ export default function Home() {
               )}
 
               {/* Bizum */}
-              <Card data-testid="payment-bizum">
+              <Card data-testid="payment-bizum" className="self-start">
                 <CardContent className="p-6 flex flex-col items-center justify-center gap-4 text-center">
                   <h3 className="text-xl font-semibold mb-2">Bizum</h3>
                   <Button
