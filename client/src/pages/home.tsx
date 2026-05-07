@@ -64,36 +64,63 @@ export default function Home() {
       title: "Hoja 1: Constitución",
       theme: "Tema 1",
       description: "Ejemplo de la parte común para preparar TCAE SAS Andalucía.",
-      file: "/tcae-samples/tema-1-constitucion.pdf",
-      page: 1,
+      previewLines: [
+        "La Constitución española de 1978 es la norma suprema del ordenamiento jurídico.",
+        "Estructura: Título Preliminar, diez títulos, disposiciones y reforma constitucional.",
+        "Puntos habituales: derechos fundamentales, Corona, Cortes Generales y organización territorial.",
+      ],
     },
     {
       title: "Hoja 2: Protección de datos",
       theme: "Tema 5",
       description: "Repaso de puntos importantes de examen sobre RGPD y LOPDGDD.",
-      file: "/tcae-samples/tema-5-proteccion-datos-importantes.pdf",
-      page: 1,
+      previewLines: [
+        "El tratamiento de datos de salud exige especial atención por tratarse de categorías especiales.",
+        "Principios clave: licitud, lealtad, transparencia, minimización y confidencialidad.",
+        "El consentimiento debe ser libre, específico, informado e inequívoco.",
+      ],
     },
     {
       title: "Hoja 3: Infecciones",
       theme: "Tema 15",
       description: "Muestra del resumen orientado a preguntas frecuentes TCAE SAS.",
-      file: "/tcae-samples/tema-15-infecciones-resumen.pdf",
-      page: 1,
+      previewLines: [
+        "La cadena epidemiológica incluye agente, reservorio, puerta de salida, vía de transmisión y huésped.",
+        "Las medidas de aislamiento reducen el riesgo de transmisión en centros sanitarios.",
+        "Conceptos frecuentes: infección, colonización, asepsia, antisepsia y desinfección.",
+      ],
     },
     {
       title: "Hoja 4: Residuos sanitarios",
       theme: "Tema 16",
       description: "Hoja de ejemplo sobre gestión de residuos sanitarios.",
-      file: "/tcae-samples/tema-16-residuos-resumen.pdf",
-      page: 1,
+      previewLines: [
+        "Los residuos sanitarios se clasifican según su riesgo y el tratamiento que requieren.",
+        "La segregación correcta en origen evita accidentes y facilita la gestión posterior.",
+        "Los residuos citostáticos requieren circuitos y contenedores específicos.",
+      ],
     },
     {
       title: "Hoja 5: Residuos y repaso",
       theme: "Tema 16",
       description: "Segunda hoja de muestra para ver el formato del material.",
-      file: "/tcae-samples/tema-16-residuos-resumen.pdf",
-      page: 2,
+      previewLines: [
+        "Repasa colores, contenedores y tiempos de almacenamiento más preguntados.",
+        "Diferencia residuos asimilables, sanitarios específicos, punzantes y citotóxicos.",
+        "En el curso se trabaja cada tema con test y simulacros tipo examen SAS.",
+      ],
+    },
+    {
+      title: "¿Quieres ver más hojas?",
+      theme: "Curso TCAE SAS online",
+      description:
+        "Para acceder al material completo, test por temas y simulacros, apúntate al curso.",
+      previewLines: [
+        "Material completo organizado por temas.",
+        "Test TCAE SAS y simulacros para practicar.",
+        "Soporte por WhatsApp para resolver dudas antes de apuntarte.",
+      ],
+      isCourseCta: true,
     },
   ];
 
@@ -159,20 +186,141 @@ export default function Home() {
       ],
       correct: "D",
     },
+    {
+      question: "¿Qué profesional debe mantener la confidencialidad de la información sanitaria del paciente?",
+      topic: "Protección de datos",
+      options: [
+        "Solo el personal médico",
+        "Todo el personal que acceda a esa información",
+        "Solo el personal administrativo",
+        "Solo quien firme un documento adicional",
+      ],
+      correct: "B",
+    },
+    {
+      question: "En higiene del paciente encamado, ¿qué zona se lava habitualmente en último lugar?",
+      topic: "Higiene del paciente",
+      options: ["Cara", "Espalda", "Zona genital", "Brazos"],
+      correct: "C",
+    },
+    {
+      question: "¿Cuál es una medida básica para prevenir infecciones asociadas a la asistencia sanitaria?",
+      topic: "Infecciones",
+      options: [
+        "Usar siempre doble guante aunque no proceda",
+        "Higiene de manos en los momentos indicados",
+        "No ventilar nunca las habitaciones",
+        "Compartir material entre pacientes si parece limpio",
+      ],
+      correct: "B",
+    },
+    {
+      question: "¿Qué residuos deben depositarse en contenedores rígidos resistentes a la perforación?",
+      topic: "Residuos sanitarios",
+      options: [
+        "Papel de oficina",
+        "Ropa limpia",
+        "Agujas y material punzante",
+        "Restos de comida",
+      ],
+      correct: "C",
+    },
+    {
+      question: "¿Qué artículo de la Constitución reconoce el derecho a la protección de la salud?",
+      topic: "Constitución",
+      options: ["Artículo 14", "Artículo 27", "Artículo 43", "Artículo 155"],
+      correct: "C",
+    },
+    {
+      question: "¿Qué significa que un test sea tipo examen en la preparación TCAE SAS?",
+      topic: "Test TCAE SAS",
+      options: [
+        "Que incluye preguntas sin respuestas",
+        "Que entrena formato, dificultad y temas frecuentes del examen",
+        "Que se hace solo una vez al año",
+        "Que no permite revisar fallos",
+      ],
+      correct: "B",
+    },
+    {
+      question: "En la movilización de pacientes, ¿qué debe priorizar el TCAE?",
+      topic: "Movilización",
+      options: [
+        "La rapidez por encima de todo",
+        "La seguridad del paciente y la ergonomía profesional",
+        "Mover siempre sin ayuda",
+        "Evitar explicar el procedimiento",
+      ],
+      correct: "B",
+    },
+    {
+      question: "¿Qué documento recoge derechos y deberes en el ámbito sanitario andaluz?",
+      topic: "SAS Andalucía",
+      options: [
+        "Normativa sanitaria y cartas de derechos aplicables",
+        "Solo el Código Penal",
+        "Solo el Estatuto de los Trabajadores",
+        "Una norma municipal sin relación sanitaria",
+      ],
+      correct: "A",
+    },
+    {
+      question: "¿Para qué sirve revisar los fallos después de un simulacro TCAE SAS?",
+      topic: "Simulacros TCAE SAS",
+      options: [
+        "Para memorizar solo la letra correcta",
+        "Para detectar temas débiles y reforzar el estudio",
+        "Para evitar estudiar teoría",
+        "Para cambiar las respuestas al azar",
+      ],
+      correct: "B",
+    },
+    {
+      question: "¿Qué vía de transmisión se relaciona con objetos contaminados?",
+      topic: "Infecciones",
+      options: ["Fómites", "Vector biológico", "Transplacentaria", "Herencia genética"],
+      correct: "A",
+    },
+    {
+      question: "¿Qué debe hacerse si hay una duda sobre la clasificación de un residuo sanitario?",
+      topic: "Residuos sanitarios",
+      options: [
+        "Depositarlo en cualquier bolsa",
+        "Consultar el protocolo del centro",
+        "Mezclarlo con residuos urbanos",
+        "Guardarlo en el uniforme",
+      ],
+      correct: "B",
+    },
+    {
+      question: "¿Cuál es una ventaja de preparar TCAE SAS online si trabajas?",
+      topic: "Plan online",
+      options: [
+        "No necesitas practicar test",
+        "Puedes organizar estudio, clases grabadas y repasos con flexibilidad",
+        "Solo estudias el día antes",
+        "Evitas hacer simulacros",
+      ],
+      correct: "B",
+    },
   ];
 
   const [sampleIndex, setSampleIndex] = useState(0);
-  const [practiceAnswers, setPracticeAnswers] = useState<Record<number, string>>({});
-  const currentSample = topicSamples[sampleIndex];
-  const whatsappPracticeText = encodeURIComponent(
-    `Hola LORMAN ACADEMIA, quiero comprobar mi test TCAE SAS.\n\n${practiceQuestions
-      .map((item, index) => {
-        const selected = practiceAnswers[index] || "Sin responder";
-        return `${index + 1}. ${item.topic}: ${selected}`;
-      })
-      .join("\n")}\n\n¿Me corregís las respuestas y me dais información del curso?`
+  const [dailyPracticeQuestions] = useState(() =>
+    [...practiceQuestions].sort(() => Math.random() - 0.5).slice(0, 10)
   );
-  const whatsappPracticeUrl = `https://wa.me/34640828654?text=${whatsappPracticeText}`;
+  const [practiceAnswers, setPracticeAnswers] = useState<Record<number, string>>({});
+  const [practiceScore, setPracticeScore] = useState<number | null>(null);
+  const currentSample = topicSamples[sampleIndex];
+  const answeredPracticeQuestions = dailyPracticeQuestions.filter(
+    (_, index) => practiceAnswers[index]
+  ).length;
+  const checkPracticeTest = () => {
+    const score = dailyPracticeQuestions.reduce((total, item, index) => {
+      return total + (practiceAnswers[index] === item.correct ? 1 : 0);
+    }, 0);
+    setPracticeScore(score);
+  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -433,14 +581,77 @@ export default function Home() {
           <Card className="shadow-lg max-w-5xl mx-auto" data-testid="topic-carousel">
             <CardContent className="p-6">
               <div className="grid lg:grid-cols-[1fr_320px] gap-6 items-stretch">
-                <div className="bg-muted/40 rounded-lg overflow-hidden border border-border min-h-[420px]">
-                  <iframe
-                    title={currentSample.title}
-                    src={`${currentSample.file}#page=${currentSample.page}&toolbar=0&navpanes=0&view=FitH`}
-                    loading="lazy"
-                    className="w-full h-[420px] bg-white"
-                    data-testid="topic-sample-frame"
-                  />
+                <div
+                  className={`rounded-lg overflow-hidden border min-h-[420px] p-6 ${
+                    currentSample.isCourseCta
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-muted/40 border-border"
+                  }`}
+                  data-testid="topic-sample-preview"
+                >
+                  <div
+                    className={`h-full rounded-md p-6 shadow-sm ${
+                      currentSample.isCourseCta
+                        ? "bg-white/10 border border-white/20"
+                        : "bg-white border border-border"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-4 mb-6">
+                      <div>
+                        <p
+                          className={`text-sm font-semibold ${
+                            currentSample.isCourseCta
+                              ? "text-white/80"
+                              : "text-primary"
+                          }`}
+                        >
+                          {currentSample.theme}
+                        </p>
+                        <h3 className="text-2xl font-bold mt-1">
+                          {currentSample.title}
+                        </h3>
+                      </div>
+                      <div
+                        className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                          currentSample.isCourseCta
+                            ? "bg-white text-primary"
+                            : "bg-primary/10 text-primary"
+                        }`}
+                      >
+                        <i
+                          className={
+                            currentSample.isCourseCta
+                              ? "fas fa-graduation-cap"
+                              : "fas fa-file-alt"
+                          }
+                        ></i>
+                      </div>
+                    </div>
+                    <div className="space-y-4">
+                      {currentSample.previewLines.map((line) => (
+                        <p
+                          key={line}
+                          className={`leading-relaxed ${
+                            currentSample.isCourseCta
+                              ? "text-white/90"
+                              : "text-muted-foreground"
+                          }`}
+                        >
+                          {line}
+                        </p>
+                      ))}
+                    </div>
+                    {currentSample.isCourseCta && (
+                      <button
+                        type="button"
+                        onClick={() => scrollToSection("precio")}
+                        className="mt-8 inline-flex items-center justify-center min-h-12 px-6 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
+                        data-testid="topic-course-cta"
+                      >
+                        Ver curso TCAE SAS online
+                      </button>
+                    )}
+                  </div>
                 </div>
                 <div className="flex flex-col justify-between text-left">
                   <div>
@@ -451,19 +662,20 @@ export default function Home() {
                       {currentSample.title}
                     </h3>
                     <p className="text-sm font-semibold text-primary mb-3">
-                      {currentSample.theme} · Página de muestra {currentSample.page}
+                      {currentSample.theme}
                     </p>
                     <p className="text-muted-foreground mb-6">
                       {currentSample.description}
                     </p>
                     <div className="rounded-md bg-muted/60 border border-border p-3 text-sm text-muted-foreground mb-6">
-                      Mostramos una selección limitada de hojas. El material
-                      completo está disponible dentro del curso.
+                      Mostramos solo 5 hojas de ejemplo. No se carga el PDF
+                      completo en la home; el material completo está dentro del
+                      curso.
                     </div>
                     <div className="space-y-2">
                       {topicSamples.map((sample, index) => (
                         <button
-                          key={`${sample.file}-${sample.page}`}
+                          key={`${sample.title}-${index}`}
                           type="button"
                           onClick={() => setSampleIndex(index)}
                           className={`w-full text-left px-3 py-2 rounded-md border transition-colors ${
@@ -522,15 +734,14 @@ export default function Home() {
               Practica con preguntas frecuentes de TCAE SAS
             </h2>
             <p className="text-lg text-muted-foreground mb-10">
-              Prueba algunas preguntas de temas que se repiten mucho en los
-              últimos años: PRL, higiene, protección de datos, residuos,
-              nutrición e infecciones. Cuando termines, pulsa comprobar y te
-              llevamos a WhatsApp para corregirlas.
+              Cada vez que actualices la página verás 10 preguntas diferentes.
+              Cada acierto suma 1 punto. Responde, pulsa comprobar y revisa tu
+              nota al momento.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-6">
-            {practiceQuestions.map((item, questionIndex) => (
+            {dailyPracticeQuestions.map((item, questionIndex) => (
               <Card className="shadow-md" key={item.question} data-testid={`practice-question-${questionIndex + 1}`}>
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
@@ -545,11 +756,18 @@ export default function Home() {
                     {item.options.map((option, optionIndex) => {
                       const letter = String.fromCharCode(65 + optionIndex);
                       const selected = practiceAnswers[questionIndex] === letter;
+                      const checked = practiceScore !== null;
+                      const isCorrect = item.correct === letter;
+                      const isWrongSelected = checked && selected && !isCorrect;
                       return (
                         <label
                           key={option}
                           className={`flex items-start gap-3 rounded-lg border p-3 cursor-pointer transition-colors ${
-                            selected
+                            checked && isCorrect
+                              ? "border-green-600 bg-green-50 text-green-900"
+                              : isWrongSelected
+                                ? "border-red-500 bg-red-50 text-red-900"
+                                : selected
                               ? "border-primary bg-primary/10"
                               : "border-border bg-white hover:bg-muted"
                           }`}
@@ -560,10 +778,13 @@ export default function Home() {
                             value={letter}
                             checked={selected}
                             onChange={() =>
-                              setPracticeAnswers({
-                                ...practiceAnswers,
-                                [questionIndex]: letter,
-                              })
+                              {
+                                setPracticeAnswers({
+                                  ...practiceAnswers,
+                                  [questionIndex]: letter,
+                                });
+                                setPracticeScore(null);
+                              }
                             }
                             className="mt-1"
                             data-testid={`practice-${questionIndex + 1}-${letter}`}
@@ -580,19 +801,47 @@ export default function Home() {
             ))}
 
             <div className="text-center pt-4">
-              <a
-                href={whatsappPracticeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center min-h-12 px-8 py-3 rounded-lg bg-green-600 text-white text-lg font-semibold hover:bg-green-700 transition-colors"
-                data-testid="practice-check-whatsapp"
+              <button
+                type="button"
+                onClick={checkPracticeTest}
+                className="inline-flex items-center justify-center min-h-12 px-8 py-3 rounded-lg bg-primary text-primary-foreground text-lg font-semibold hover:bg-primary/90 transition-colors"
+                data-testid="practice-check-score"
               >
-                <i className="fab fa-whatsapp mr-2"></i>Comprobar mis respuestas por WhatsApp
-              </a>
+                Comprobar test
+              </button>
               <p className="text-sm text-muted-foreground mt-3">
-                Se abrirá WhatsApp con tus respuestas preparadas para enviarlas
-                al +34 640 828 654.
+                Has respondido {answeredPracticeQuestions} de 10 preguntas.
               </p>
+              {practiceScore !== null && (
+                <div
+                  className="mt-8 rounded-lg border border-primary/20 bg-primary/5 p-6 text-left"
+                  data-testid="practice-score-result"
+                >
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                      <p className="text-sm font-semibold text-primary mb-2">
+                        Resultado del test
+                      </p>
+                      <h3 className="text-3xl font-bold">
+                        Tu nota: {practiceScore}/10
+                      </h3>
+                      <p className="text-muted-foreground mt-2">
+                        Revisa en verde las respuestas correctas y en rojo las
+                        que has marcado mal.
+                      </p>
+                    </div>
+                    <a
+                      href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20he%20hecho%20el%20test%20gratis%20TCAE%20SAS%20y%20quiero%20saber%20mis%20fallos%20y%20apuntarme%20al%20curso"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center min-h-12 px-6 rounded-lg bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors"
+                      data-testid="practice-score-whatsapp"
+                    >
+                      <i className="fab fa-whatsapp mr-2"></i>Saber mis fallos y apuntarme
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
