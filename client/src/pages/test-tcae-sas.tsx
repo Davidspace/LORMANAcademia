@@ -330,17 +330,31 @@ const topicSpecificPoints: Record<string, Array<{ concept: string; correct: stri
 
 const makeQuestions = (topic: TopicTest): Question[] => {
   const points = topicSpecificPoints[topic.id] || examPoints[topic.id] || sharedExamPoints;
+  const questionTemplates = [
+    (concept: string) => `Respecto a ${concept}, señale la respuesta correcta:`,
+    (concept: string) => `En relación con ${concept}, ¿cuál de las siguientes afirmaciones es correcta?`,
+    (concept: string) => `Sobre ${concept}, indique la opción correcta:`,
+    (concept: string) => `¿Cuál de las siguientes respuestas es correcta en relación con ${concept}?`,
+    (concept: string) => `En la práctica asistencial del TCAE, respecto a ${concept}:`,
+  ];
+  const wrongOptions = [
+    (concept: string) => `Debe realizarse siempre sin consultar normas ni protocolos.`,
+    (concept: string) => `No tiene relación con la seguridad del paciente ni con los cuidados.`,
+    (concept: string) => `Lo prioritario es actuar con rapidez aunque se omitan medidas de seguridad.`,
+    (concept: string) => `Solo corresponde al personal médico y nunca afecta al TCAE.`,
+    (concept: string) => `Puede ignorarse si el paciente no lo solicita expresamente.`,
+  ];
   return points.slice(0, 10).map((point, index) => {
     const distractors = [
-      `La opción correcta sobre ${point.concept} es actuar siempre sin seguir protocolo.`,
-      `${point.concept} no se relaciona con la práctica del TCAE.`,
-      `En ${point.concept}, lo prioritario es responder al azar si hay dudas.`,
+      wrongOptions[index % wrongOptions.length](point.concept),
+      wrongOptions[(index + 1) % wrongOptions.length](point.concept),
+      wrongOptions[(index + 2) % wrongOptions.length](point.concept),
     ];
     const correctIndex = index % 4;
     const options = [...distractors];
     options.splice(correctIndex, 0, point.correct);
     return {
-      question: `Pregunta tipo examen TCAE SAS sobre ${point.concept}: ¿cuál es correcta?`,
+      question: questionTemplates[index % questionTemplates.length](point.concept),
       options,
       correct: String.fromCharCode(65 + correctIndex),
       explanation: point.explanation,
