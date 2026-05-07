@@ -1,7 +1,7 @@
 {
-  "name": "LORMAN ACADEMIA - TCAE SAS Andalucía",
+  "name": "LORMAN ACADEMIA - TCAE SAS Andalucía Online",
   "short_name": "LORMAN ACADEMIA",
-  "description": "Preparación completa para TCAE SAS Andalucía",
+  "description": "Academia online para preparar TCAE SAS Andalucía, test, simulacros y Bolsa SAS TCAE",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
