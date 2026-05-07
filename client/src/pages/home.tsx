@@ -194,13 +194,6 @@ export default function Home() {
             </div>
             <div className="hidden md:flex space-x-6">
               <button
-                onClick={() => scrollToSection("como")}
-                className="hover:text-primary transition-colors"
-                data-testid="nav-como"
-              >
-                Preparación SAS
-              </button>
-              <button
                 onClick={() => scrollToSection("material")}
                 className="hover:text-primary transition-colors"
                 data-testid="nav-material"
@@ -305,72 +298,6 @@ export default function Home() {
               <div data-testid="hero-feature-3">
                 <i className="fas fa-check mr-2"></i>Grabaciones incluidas
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Preparación TCAE SAS Andalucía */}
-      <section id="como" className="py-20 dynamic-bg">
-        <div className="container mx-auto px-4">
-          <h2
-            className="text-4xl font-bold text-center mb-6"
-            data-testid="section-como-title"
-          >
-            Preparación específica para TCAE SAS Andalucía
-          </h2>
-          <p className="max-w-3xl mx-auto text-center text-lg text-muted-foreground mb-12">
-            Lorman Academia es una academia TCAE online orientada a opositores
-            que quieren preparar el SAS Andalucía, con un método centrado en el
-            temario del Servicio Andaluz de Salud, el entrenamiento con test
-            TCAE SAS y la constancia necesaria para llegar con seguridad al
-            examen.
-          </p>
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center" data-testid="step-1">
-              <div className="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                1
-              </div>
-              <h3 className="text-xl font-semibold mb-3">
-                Temario TCAE SAS organizado
-              </h3>
-              <p className="text-muted-foreground">
-                Cada mes recibes 3 temas nuevos: 1 común + 2 específicos del
-                temario TCAE SAS Andalucía junto a clases explicativas,
-                esquemas y presentaciones para estudiar con orden.
-              </p>
-            </div>
-            <div className="text-center" data-testid="step-2">
-              <div className="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                2
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Estudio online completo</h3>
-              <p className="text-muted-foreground">
-                Materiales para preparar TCAE SAS desde casa: vídeos, PDFs,
-                esquemas, resúmenes y reglas nemotécnicas.
-              </p>
-            </div>
-            <div className="text-center" data-testid="step-3">
-              <div className="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                3
-              </div>
-              <h3 className="text-xl font-semibold mb-3">
-                Test TCAE SAS por tema
-              </h3>
-              <p className="text-muted-foreground">
-                2 autoevaluaciones por tema con mínimo 100 preguntas cada una,
-                tipo examen SAS, para practicar desde el primer mes.
-              </p>
-            </div>
-            <div className="text-center" data-testid="step-4">
-              <div className="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                4
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Clases y seguimiento</h3>
-              <p className="text-muted-foreground">
-                2 clases extra al mes para resolver dudas, repasar fallos
-                comunes y mantener un plan de estudio realista. Todas grabadas.
-              </p>
             </div>
           </div>
         </div>
