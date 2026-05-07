@@ -465,6 +465,13 @@ export default function Home() {
               >
                 <i className="fab fa-whatsapp mr-2"></i>Ver curso TCAE SAS online
               </a>
+              <a
+                href="/test-tcae-sas"
+                className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-white text-primary text-lg font-semibold hover:bg-white/90 transition-all"
+                data-testid="hero-cta-practice"
+              >
+                Practica con nosotros
+              </a>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm opacity-80">
               <div data-testid="hero-feature-1">
@@ -872,6 +879,15 @@ export default function Home() {
                   </div>
                 </div>
               )}
+              <div className="mt-6">
+                <a
+                  href="/test-tcae-sas"
+                  className="inline-flex items-center justify-center min-h-12 px-8 py-3 rounded-lg border border-primary text-primary text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
+                  data-testid="practice-topic-tests-link"
+                >
+                  Practica con nosotros por temas
+                </a>
+              </div>
             </div>
           </div>
         </div>
