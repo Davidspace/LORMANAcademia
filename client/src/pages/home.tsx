@@ -61,24 +61,39 @@ export default function Home() {
 
   const topicSamples = [
     {
-      title: "Tema 1: Constitución",
-      description: "Muestra real del material subido para preparar la parte común.",
+      title: "Hoja 1: Constitución",
+      theme: "Tema 1",
+      description: "Ejemplo de la parte común para preparar TCAE SAS Andalucía.",
       file: "/tcae-samples/tema-1-constitucion.pdf",
+      page: 1,
     },
     {
-      title: "Tema 5: Protección de datos",
-      description: "Hoja de repaso con puntos importantes de examen.",
+      title: "Hoja 2: Protección de datos",
+      theme: "Tema 5",
+      description: "Repaso de puntos importantes de examen sobre RGPD y LOPDGDD.",
       file: "/tcae-samples/tema-5-proteccion-datos-importantes.pdf",
+      page: 1,
     },
     {
-      title: "Tema 15: Infecciones",
-      description: "Resumen orientado a preguntas frecuentes de TCAE SAS.",
+      title: "Hoja 3: Infecciones",
+      theme: "Tema 15",
+      description: "Muestra del resumen orientado a preguntas frecuentes TCAE SAS.",
       file: "/tcae-samples/tema-15-infecciones-resumen.pdf",
+      page: 1,
     },
     {
-      title: "Tema 16: Residuos",
-      description: "Resumen de gestión de residuos sanitarios y puntos clave.",
+      title: "Hoja 4: Residuos sanitarios",
+      theme: "Tema 16",
+      description: "Hoja de ejemplo sobre gestión de residuos sanitarios.",
       file: "/tcae-samples/tema-16-residuos-resumen.pdf",
+      page: 1,
+    },
+    {
+      title: "Hoja 5: Residuos y repaso",
+      theme: "Tema 16",
+      description: "Segunda hoja de muestra para ver el formato del material.",
+      file: "/tcae-samples/tema-16-residuos-resumen.pdf",
+      page: 2,
     },
   ];
 
@@ -479,12 +494,12 @@ export default function Home() {
               className="text-4xl font-bold mb-6"
               data-testid="section-material-title"
             >
-              Hojas de ejemplo de los temas TCAE SAS
+              5 hojas de ejemplo de los temas TCAE SAS
             </h2>
             <p className="text-lg text-muted-foreground mb-10">
-              Mira una muestra real del material de estudio: temas redactados,
-              resúmenes y esquemas pensados para preparar TCAE SAS Andalucía de
-              forma clara, práctica y online.
+              Mira una muestra breve del material de estudio: solo algunas
+              hojas reales de cuatro temas, suficientes para ver el formato sin
+              mostrar el PDF completo en la home.
             </p>
           </div>
 
@@ -494,7 +509,7 @@ export default function Home() {
                 <div className="bg-muted/40 rounded-lg overflow-hidden border border-border min-h-[420px]">
                   <iframe
                     title={currentSample.title}
-                    src={`${currentSample.file}#toolbar=0&navpanes=0&view=FitH`}
+                    src={`${currentSample.file}#page=${currentSample.page}&toolbar=0&navpanes=0&view=FitH`}
                     loading="lazy"
                     className="w-full h-[420px] bg-white"
                     data-testid="topic-sample-frame"
@@ -508,22 +523,20 @@ export default function Home() {
                     <h3 className="text-2xl font-bold mb-3">
                       {currentSample.title}
                     </h3>
+                    <p className="text-sm font-semibold text-primary mb-3">
+                      {currentSample.theme} · Página de muestra {currentSample.page}
+                    </p>
                     <p className="text-muted-foreground mb-6">
                       {currentSample.description}
                     </p>
-                    <a
-                      href={currentSample.file}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center h-10 px-4 mb-6 rounded-md bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
-                      data-testid="topic-sample-download"
-                    >
-                      <i className="fas fa-file-pdf mr-2"></i>Ver o descargar PDF
-                    </a>
+                    <div className="rounded-md bg-muted/60 border border-border p-3 text-sm text-muted-foreground mb-6">
+                      Mostramos una selección limitada de hojas. El material
+                      completo está disponible dentro del curso.
+                    </div>
                     <div className="space-y-2">
                       {topicSamples.map((sample, index) => (
                         <button
-                          key={sample.file}
+                          key={`${sample.file}-${sample.page}`}
                           type="button"
                           onClick={() => setSampleIndex(index)}
                           className={`w-full text-left px-3 py-2 rounded-md border transition-colors ${
