@@ -61,7 +61,7 @@ export default function Home() {
 
   const topicSamples = [
     {
-      title: "Hoja 1: Constitución",
+      title: "Constitución - parte 1",
       theme: "Tema 1",
       description: "Ejemplo de la parte común para preparar TCAE SAS Andalucía.",
       previewLines: [
@@ -71,7 +71,17 @@ export default function Home() {
       ],
     },
     {
-      title: "Hoja 2: Protección de datos",
+      title: "Constitución - parte 2",
+      theme: "Tema 1",
+      description: "Segundo ejemplo del tema de Constitución para ver el tipo de resumen.",
+      previewLines: [
+        "Los derechos fundamentales tienen especial protección y aparecen entre los contenidos más preguntados.",
+        "La organización territorial distingue municipios, provincias y comunidades autónomas.",
+        "La reforma constitucional sigue procedimientos distintos según la materia afectada.",
+      ],
+    },
+    {
+      title: "Protección de datos - parte 1",
       theme: "Tema 5",
       description: "Repaso de puntos importantes de examen sobre RGPD y LOPDGDD.",
       previewLines: [
@@ -81,7 +91,17 @@ export default function Home() {
       ],
     },
     {
-      title: "Hoja 3: Infecciones",
+      title: "Protección de datos - parte 2",
+      theme: "Tema 5",
+      description: "Ejemplo de repaso aplicado a datos sanitarios y confidencialidad.",
+      previewLines: [
+        "El personal sanitario debe proteger la intimidad del paciente en todo momento.",
+        "Los datos deben tratarse solo para finalidades legítimas y con acceso limitado.",
+        "La confidencialidad se mantiene también después de finalizar la relación laboral.",
+      ],
+    },
+    {
+      title: "Infecciones - parte 1",
       theme: "Tema 15",
       description: "Muestra del resumen orientado a preguntas frecuentes TCAE SAS.",
       previewLines: [
@@ -91,9 +111,19 @@ export default function Home() {
       ],
     },
     {
-      title: "Hoja 4: Residuos sanitarios",
+      title: "Infecciones - parte 2",
+      theme: "Tema 15",
+      description: "Segundo ejemplo del tema de infecciones con enfoque tipo test.",
+      previewLines: [
+        "La higiene de manos es una medida esencial para cortar la transmisión.",
+        "Las gotas de Pflügge y Wells se relacionan con transmisión aérea a corta distancia.",
+        "El aislamiento se adapta al mecanismo de transmisión y al protocolo del centro.",
+      ],
+    },
+    {
+      title: "Residuos sanitarios - parte 1",
       theme: "Tema 16",
-      description: "Hoja de ejemplo sobre gestión de residuos sanitarios.",
+      description: "Ejemplo sobre gestión de residuos sanitarios.",
       previewLines: [
         "Los residuos sanitarios se clasifican según su riesgo y el tratamiento que requieren.",
         "La segregación correcta en origen evita accidentes y facilita la gestión posterior.",
@@ -101,9 +131,9 @@ export default function Home() {
       ],
     },
     {
-      title: "Hoja 5: Residuos y repaso",
+      title: "Residuos sanitarios - parte 2",
       theme: "Tema 16",
-      description: "Segunda hoja de muestra para ver el formato del material.",
+      description: "Segundo ejemplo para ver el formato de repaso del tema.",
       previewLines: [
         "Repasa colores, contenedores y tiempos de almacenamiento más preguntados.",
         "Diferencia residuos asimilables, sanitarios específicos, punzantes y citotóxicos.",
@@ -111,7 +141,7 @@ export default function Home() {
       ],
     },
     {
-      title: "¿Quieres ver más hojas?",
+      title: "¿Quieres ver más contenido?",
       theme: "Curso TCAE SAS online",
       description:
         "Para acceder al material completo, test por temas y simulacros, apúntate al curso.",
@@ -569,12 +599,12 @@ export default function Home() {
               className="text-4xl font-bold mb-6"
               data-testid="section-material-title"
             >
-              5 hojas de ejemplo de los temas TCAE SAS
+              Ejemplo de partes de temas
             </h2>
             <p className="text-lg text-muted-foreground mb-10">
-              Mira una muestra breve del material de estudio: solo algunas
-              hojas reales de cuatro temas, suficientes para ver el formato sin
-              mostrar el PDF completo en la home.
+              Mira una muestra breve del material de estudio: dos partes de
+              cada tema de ejemplo, suficientes para ver el formato sin mostrar
+              el PDF completo en la home.
             </p>
           </div>
 
@@ -668,7 +698,7 @@ export default function Home() {
                       {currentSample.description}
                     </p>
                     <div className="rounded-md bg-muted/60 border border-border p-3 text-sm text-muted-foreground mb-6">
-                      Mostramos solo 5 hojas de ejemplo. No se carga el PDF
+                      Mostramos solo fragmentos de ejemplo. No se carga el PDF
                       completo en la home; el material completo está dentro del
                       curso.
                     </div>
@@ -1049,7 +1079,7 @@ export default function Home() {
                       "Acceso al material del curso",
                       "Test por temas",
                       "Simulacros TCAE SAS",
-                      "Hojas de ejemplo",
+                      "Muestras de material",
                       "Preguntas tipo examen",
                       "Soporte por WhatsApp",
                     ].map((feature) => (
@@ -1117,7 +1147,7 @@ export default function Home() {
             <Card className="shadow-md mb-8" data-testid="trust-block">
               <CardContent className="p-6">
                 <p className="text-lg font-semibold mb-5">
-                  Antes de apuntarte puedes ver hojas reales del curso,
+                  Antes de apuntarte puedes ver muestras reales del curso,
                   practicar con preguntas tipo test y escribirnos por WhatsApp
                   para resolver dudas.
                 </p>
@@ -1641,7 +1671,7 @@ export default function Home() {
                   ¿Qué incluye el curso mensual?
                 </AccordionTrigger>
                 <AccordionContent>
-                  Incluye material, test, simulacros, hojas de ejemplo y
+                  Incluye material, test, simulacros, muestras de contenido y
                   soporte para preparar TCAE SAS Andalucía.
                 </AccordionContent>
               </AccordionItem>
