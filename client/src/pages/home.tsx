@@ -488,6 +488,97 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SEO TCAE SAS Andalucía */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <p className="text-primary font-semibold uppercase tracking-wide mb-3">
+                TCAE SAS Andalucía online
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Curso online para preparar TCAE SAS, test y Bolsa SAS TCAE
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                LORMAN ACADEMIA ayuda a opositores que buscan TCAE SAS,
+                TCAE Andalucía, academia TCAE online, test TCAE SAS,
+                simulacros TCAE SAS y orientación para Bolsa SAS TCAE.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="shadow-sm">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-3">
+                    Preparar TCAE SAS online
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Plan de estudio para la oposición TCAE SAS Andalucía con
+                    temario organizado, clases, resúmenes y seguimiento para
+                    estudiar desde casa aunque trabajes a turnos.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="shadow-sm">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-3">
+                    Test y simulacros TCAE SAS
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Práctica por temas, preguntas tipo examen, corrección de
+                    fallos y simulacros para preparar el formato del Servicio
+                    Andaluz de Salud con más seguridad.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="shadow-sm">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-3">
+                    Bolsa SAS TCAE en Andalucía
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Orientación para aspirantes TCAE en Andalucía, Sevilla,
+                    Málaga, Cádiz, Granada, Córdoba, Jaén, Huelva y Almería,
+                    con dudas frecuentes sobre méritos y documentación.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+              {[
+                "TCAE SAS Andalucía",
+                "oposición TCAE SAS",
+                "academia TCAE online",
+                "curso TCAE SAS online",
+                "test TCAE SAS",
+                "simulacros TCAE SAS",
+                "Bolsa SAS TCAE",
+              ].map((term) => (
+                <span
+                  key={term}
+                  className="rounded-full bg-primary/10 px-4 py-2 font-semibold text-primary"
+                >
+                  {term}
+                </span>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/test-tcae-sas"
+                className="inline-flex items-center justify-center min-h-12 px-6 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90"
+              >
+                Hacer test TCAE SAS por tema
+              </a>
+              <Button
+                onClick={() => scrollToSection("precio")}
+                className="min-h-12 px-6"
+              >
+                Ver precio del curso TCAE SAS
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Qué incluye cada tema */}
       <section id="incluye" className="py-20">
         <div className="container mx-auto px-4">

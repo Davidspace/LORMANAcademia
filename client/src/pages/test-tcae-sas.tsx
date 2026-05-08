@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { topicTests } from "@/data/tcae-tests";
@@ -105,12 +105,22 @@ export default function TestTcaeSas() {
   const [activeTopicId, setActiveTopicId] = useState(topicTests[0].id);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [checked, setChecked] = useState<Record<string, boolean>>({});
+  const questionsRef = useRef<HTMLDivElement>(null);
   const activeTopic = topicTests.find((topic) => topic.id === activeTopicId) || topicTests[0];
   const topicScore = activeTopic.questions.reduce((total, question, index) => {
     const key = `${activeTopic.id}-${index}`;
     return total + (checked[key] && answers[key] === question.correct ? 1 : 0);
   }, 0);
   const checkedCount = activeTopic.questions.filter((_, index) => checked[`${activeTopic.id}-${index}`]).length;
+  const showTopicQuestions = (topicId: string) => {
+    setActiveTopicId(topicId);
+    window.setTimeout(() => {
+      questionsRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -155,7 +165,7 @@ export default function TestTcaeSas() {
                   <button
                     key={topic.id}
                     type="button"
-                    onClick={() => setActiveTopicId(topic.id)}
+                    onClick={() => showTopicQuestions(topic.id)}
                     className={`w-full text-left rounded-lg border p-4 transition-colors ${
                       activeTopic.id === topic.id
                         ? "border-primary bg-primary/10 text-primary"
@@ -170,7 +180,7 @@ export default function TestTcaeSas() {
                 ))}
               </aside>
 
-              <div>
+              <div ref={questionsRef} className="scroll-mt-24">
                 <div className="mb-6 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
                   <div>
                     <h2 className="text-3xl font-bold">{activeTopic.title}</h2>
