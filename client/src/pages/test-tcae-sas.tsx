@@ -18,23 +18,86 @@ function getCleanAnswerText(item: TestQuestion) {
     .trim();
 }
 
+const stopWords = new Set([
+  "ante",
+  "como",
+  "con",
+  "del",
+  "desde",
+  "ella",
+  "ellos",
+  "entre",
+  "para",
+  "pero",
+  "por",
+  "que",
+  "las",
+  "los",
+  "una",
+  "uno",
+  "unas",
+  "unos",
+  "sobre",
+  "solo",
+  "todas",
+  "todos",
+]);
+
+function getKeywords(text: string, limit = 4) {
+  const words = text
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .split(/\s+/)
+    .map((word) => word.trim())
+    .filter((word) => word.length > 2 && !stopWords.has(word.toLowerCase()));
+
+  return Array.from(new Set(words)).slice(0, limit);
+}
+
+function getQuestionFocus(question: string) {
+  const keywords = getKeywords(question.replace(/["¿?]/g, ""), 3);
+  return keywords.length ? keywords.join(" + ") : "el concepto preguntado";
+}
+
+function buildMemoryRule(correctText: string, question: string) {
+  const numericMatch = correctText.match(
+    /\b\d{1,4}(?:[.,]\d+)?%?|\d{1,2}\s+de\s+\w+\s+de\s+\d{4}/i,
+  );
+  const keywords = getKeywords(correctText, 4);
+  const focus = getQuestionFocus(question);
+
+  if (numericMatch) {
+    return `Truco: une el dato "${numericMatch[0]}" con "${focus}". En el repaso, repite en voz alta: "${focus}: ${numericMatch[0]}" para fijar el número o la fecha.`;
+  }
+
+  if (keywords.length >= 2) {
+    const acronym = keywords
+      .map((word) => word[0].toUpperCase())
+      .join("-");
+    return `Truco nemotécnico: ${acronym} = ${keywords.join(" + ")}. Usa esas iniciales para reconstruir la respuesta cuando veas una pregunta sobre ${focus}.`;
+  }
+
+  const anchor = keywords[0] || correctText;
+  return `Truco: usa "${anchor}" como palabra ancla. Si el enunciado te lleva a ${focus}, piensa primero en "${anchor}" y descarta las opciones que se alejen de esa idea.`;
+}
+
 function buildExplanation(item: TestQuestion, selected?: string) {
   const correctText = getCorrectOptionText(item) || getCleanAnswerText(item);
+  const questionFocus = getQuestionFocus(item.question);
+  const answerKeywords = getKeywords(correctText, 4);
   const selectedText =
     selected && selected !== item.correct
       ? item.options[selected.charCodeAt(0) - 65]
       : "";
 
   return {
-    intro: `La correcta es la ${item.correct}.`,
-    reason: `Porque la opción "${correctText}" responde exactamente a lo que pregunta el enunciado. En este tipo de test TCAE SAS conviene localizar la palabra clave de la pregunta y comprobar qué alternativa recoge el concepto completo, sin cambiarlo ni dejarlo a medias.`,
+    intro: `La respuesta correcta es la ${item.correct}: ${correctText}.`,
+    reason: `Justificación: es la correcta porque relaciona "${questionFocus}" con "${answerKeywords.join(
+      " + ",
+    ) || correctText}". Esa es la asociación que pide el enunciado; las demás opciones pueden parecer cercanas, pero cambian el dato clave o no responden exactamente a la pregunta.`,
     selectedNote: selectedText
-      ? `Tu respuesta fue "${selectedText}". Repásala comparándola con la correcta: normalmente el fallo aparece porque la opción se parece, pero no incluye el dato principal o introduce una idea que no corresponde.`
+      ? `Tu respuesta fue "${selectedText}". Compárala con "${correctText}": el detalle que debes guardar es "${answerKeywords[0] || correctText}".`
       : "",
-    trick: `Truco: quédate con las 3-4 palabras fuertes de la respuesta correcta: "${correctText
-      .split(/\s+/)
-      .slice(0, 4)
-      .join(" ")}". Si las ves juntas en el examen, tendrás una pista rápida para reconocerla.`,
+    trick: buildMemoryRule(correctText, item.question),
   };
 }
 
