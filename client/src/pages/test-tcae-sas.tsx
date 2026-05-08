@@ -2,6 +2,41 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { topicTests } from "@/data/tcae-tests";
+import type { TestQuestion } from "@/data/tcae-tests";
+
+const whatsappUrl =
+  "https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20quiero%20saber%20m%C3%A1s%20sobre%20el%20curso%20TCAE%20SAS%20Andaluc%C3%ADa";
+
+function getCorrectOptionText(item: TestQuestion) {
+  const index = item.correct.charCodeAt(0) - 65;
+  return item.options[index] || "";
+}
+
+function getCleanAnswerText(item: TestQuestion) {
+  return item.explanation
+    .replace(/^La respuesta [A-D] es correcta:\s*/i, "")
+    .trim();
+}
+
+function buildExplanation(item: TestQuestion, selected?: string) {
+  const correctText = getCorrectOptionText(item) || getCleanAnswerText(item);
+  const selectedText =
+    selected && selected !== item.correct
+      ? item.options[selected.charCodeAt(0) - 65]
+      : "";
+
+  return {
+    intro: `La correcta es la ${item.correct}.`,
+    reason: `Porque la opción "${correctText}" responde exactamente a lo que pregunta el enunciado. En este tipo de test TCAE SAS conviene localizar la palabra clave de la pregunta y comprobar qué alternativa recoge el concepto completo, sin cambiarlo ni dejarlo a medias.`,
+    selectedNote: selectedText
+      ? `Tu respuesta fue "${selectedText}". Repásala comparándola con la correcta: normalmente el fallo aparece porque la opción se parece, pero no incluye el dato principal o introduce una idea que no corresponde.`
+      : "",
+    trick: `Truco: quédate con las 3-4 palabras fuertes de la respuesta correcta: "${correctText
+      .split(/\s+/)
+      .slice(0, 4)
+      .join(" ")}". Si las ves juntas en el examen, tendrás una pista rápida para reconocerla.`,
+  };
+}
 
 export default function TestTcaeSas() {
   const [activeTopicId, setActiveTopicId] = useState(topicTests[0].id);
@@ -22,7 +57,7 @@ export default function TestTcaeSas() {
             LORMAN ACADEMIA
           </a>
           <a
-            href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20curso%20TCAE%20SAS"
+            href={whatsappUrl}
             className="hidden sm:inline-flex items-center justify-center h-10 px-4 rounded-md bg-green-600 text-white font-semibold hover:bg-green-700"
           >
             <i className="fab fa-whatsapp mr-2"></i>Consultar curso
@@ -91,6 +126,7 @@ export default function TestTcaeSas() {
                     const selected = answers[key];
                     const isChecked = checked[key];
                     const isCorrect = selected === item.correct;
+                    const correction = buildExplanation(item, selected);
 
                     return (
                       <Card key={`${activeTopic.id}-${item.question}`} className="shadow-sm">
@@ -158,10 +194,21 @@ export default function TestTcaeSas() {
                                   : "border-red-500 bg-red-50 text-red-900"
                               }`}
                             >
-                              <p className="font-semibold mb-1">
-                                {isCorrect ? "Correcta" : "Incorrecta"}
-                              </p>
-                              <p>{item.explanation}</p>
+                              <div className="space-y-2 text-sm leading-relaxed">
+                                <p className="text-base font-semibold">
+                                  {correction.intro}
+                                </p>
+                                <p className="font-semibold">
+                                  {isCorrect
+                                    ? "Has marcado bien la respuesta."
+                                    : "Tu respuesta no era la correcta."}
+                                </p>
+                                <p>{correction.reason}</p>
+                                {correction.selectedNote && (
+                                  <p>{correction.selectedNote}</p>
+                                )}
+                                <p>{correction.trick}</p>
+                              </div>
                             </div>
                           )}
                         </CardContent>
@@ -192,6 +239,14 @@ export default function TestTcaeSas() {
           </div>
         </section>
       </main>
+      <a
+        href={whatsappUrl}
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-600 px-5 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200"
+        aria-label="Contactar por WhatsApp"
+      >
+        <i className="fab fa-whatsapp text-lg"></i>
+        <span>Quiero saber más</span>
+      </a>
     </div>
   );
 }
