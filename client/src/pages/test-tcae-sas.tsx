@@ -41,8 +41,8 @@ export default function TestTcaeSas() {
                 Practica con nosotros
               </h1>
               <p className="text-lg md:text-xl opacity-90">
-                Preguntas extraídas de la carpeta TEST. Elige un tema, responde
-                y comprueba cada respuesta al momento.
+                Elige un tema, responde a cada pregunta y comprueba tus
+                respuestas al momento con una explicación clara.
               </p>
             </div>
           </div>
