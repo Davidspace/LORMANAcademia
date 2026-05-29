@@ -7,10 +7,16 @@ import Home from "@/pages/home";
 import TestTcaeSas from "@/pages/test-tcae-sas";
 import NotFound from "@/pages/not-found";
 
+function AulaRedirect() {
+  window.location.replace("https://aula.86.48.3.134.sslip.io/course/view.php?id=2");
+  return null;
+}
+
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home}/>
+      <Route path="/aula" component={AulaRedirect}/>
       <Route path="/test-tcae-sas" component={TestTcaeSas}/>
       <Route component={NotFound} />
     </Switch>
