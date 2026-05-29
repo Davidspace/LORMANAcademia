@@ -9,10 +9,13 @@ import {
 } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
 import PayPalButton from "@/components/PayPalButton";
+import { BookOpen, Menu, X } from "lucide-react";
 
 export default function Home() {
   const [navScrolled, setNavScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { toast } = useToast();
+  const virtualCampusUrl = "https://lorman-academia.vercel.app/aula";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -355,6 +358,7 @@ export default function Home() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
+      setMobileMenuOpen(false);
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
@@ -367,10 +371,10 @@ export default function Home() {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <div className="text-2xl font-bold text-primary" data-testid="logo">
+            <div className="text-xl sm:text-2xl font-bold text-primary" data-testid="logo">
               LORMAN ACADEMIA
             </div>
-            <div className="hidden md:flex space-x-6">
+            <div className="hidden xl:flex items-center space-x-6">
               <button
                 onClick={() => scrollToSection("material")}
                 className="hover:text-primary transition-colors"
@@ -420,15 +424,102 @@ export default function Home() {
               >
                 Contacto
               </button>
+              <a
+                href={virtualCampusUrl}
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 font-semibold text-accent-foreground shadow-sm transition-colors hover:bg-accent/90"
+                data-testid="nav-aula-virtual"
+              >
+                <BookOpen className="h-4 w-4" />
+                Aula virtual
+              </a>
+            </div>
+            <div className="flex items-center gap-2 xl:hidden">
+              <a
+                href={virtualCampusUrl}
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-3 py-2 text-sm font-semibold text-accent-foreground shadow-sm transition-colors hover:bg-accent/90"
+                data-testid="mobile-aula-virtual"
+              >
+                <BookOpen className="h-4 w-4" />
+                Aula
+              </a>
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen((open) => !open)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-white text-primary shadow-sm"
+                aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+                aria-expanded={mobileMenuOpen}
+                data-testid="mobile-menu-toggle"
+              >
+                {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
             </div>
             <a
               href="https://wa.me/34640828654?text=Hola%20LORMAN%20ACADEMIA%2C%20quisiera%20información"
-              className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+              className="hidden rounded-lg bg-primary px-4 py-2 text-primary-foreground transition-colors hover:bg-primary/90 xl:inline-flex"
               data-testid="nav-whatsapp"
             >
               <i className="fab fa-whatsapp mr-2"></i>Preparar TCAE SAS
             </a>
           </div>
+          {mobileMenuOpen && (
+            <div
+              className="xl:hidden border-t border-border bg-white py-3 shadow-sm"
+              data-testid="mobile-menu"
+            >
+              <div className="grid gap-1">
+                <button
+                  onClick={() => scrollToSection("material")}
+                  className="rounded-md px-3 py-2 text-left font-medium hover:bg-muted"
+                >
+                  Material
+                </button>
+                <button
+                  onClick={() => scrollToSection("simulacros")}
+                  className="rounded-md px-3 py-2 text-left font-medium hover:bg-muted"
+                >
+                  Test y simulacros
+                </button>
+                <button
+                  onClick={() => scrollToSection("metodo")}
+                  className="rounded-md px-3 py-2 text-left font-medium hover:bg-muted"
+                >
+                  Plan online
+                </button>
+                <button
+                  onClick={() => scrollToSection("bolsa")}
+                  className="rounded-md px-3 py-2 text-left font-medium hover:bg-muted"
+                >
+                  Bolsa SAS
+                </button>
+                <button
+                  onClick={() => scrollToSection("precio")}
+                  className="rounded-md px-3 py-2 text-left font-medium hover:bg-muted"
+                >
+                  Suscripción
+                </button>
+                <button
+                  onClick={() => scrollToSection("faq")}
+                  className="rounded-md px-3 py-2 text-left font-medium hover:bg-muted"
+                >
+                  FAQ
+                </button>
+                <button
+                  onClick={() => scrollToSection("contacto")}
+                  className="rounded-md px-3 py-2 text-left font-medium hover:bg-muted"
+                >
+                  Contacto
+                </button>
+                <a
+                  href={virtualCampusUrl}
+                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-3 font-semibold text-accent-foreground shadow-sm hover:bg-accent/90"
+                  data-testid="mobile-menu-aula-virtual"
+                >
+                  <BookOpen className="h-4 w-4" />
+                  Aula virtual
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -471,6 +562,13 @@ export default function Home() {
                 data-testid="hero-cta-practice"
               >
                 Practica con nosotros
+              </a>
+              <a
+                href={virtualCampusUrl}
+                className="inline-flex items-center justify-center h-12 px-8 rounded-lg border-2 border-white text-white text-lg font-semibold hover:bg-white hover:text-primary transition-all"
+                data-testid="hero-cta-aula-virtual"
+              >
+                Aula virtual
               </a>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm opacity-80">

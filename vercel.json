@@ -3,6 +3,13 @@
   "buildCommand": "npx vite build --config vite.config.prod.ts",
   "outputDirectory": "dist/public",
   "routes": [
+    {
+      "src": "/aula",
+      "status": 302,
+      "headers": {
+        "Location": "https://aula.86.48.3.134.sslip.io/course/view.php?id=2"
+      }
+    },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
