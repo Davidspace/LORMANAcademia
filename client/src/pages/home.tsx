@@ -30,8 +30,17 @@ const courses = [
     price: "25 €/mes",
     detail: "durante 10 meses",
     description:
-      "Curso online TCAE-SAS con acceso a Moodle, temario organizado, test y materiales de estudio.",
-    features: ["Temario por bloques", "Test de repaso", "Acceso desde móvil y ordenador"],
+      "Curso online TCAE-SAS con acceso a Moodle, clases grabadas, temario organizado, test y materiales de estudio.",
+    features: ["Clases grabadas", "Temario por bloques", "Test de repaso"],
+  },
+  {
+    title: "Celador Conductor-SAS",
+    badge: "Moodle online",
+    price: "25 €",
+    detail: "curso online",
+    description:
+      "Curso online para Celador Conductor-SAS con clases grabadas, temario organizado, test y acceso al aula virtual.",
+    features: ["Clases grabadas", "Temario por bloques", "Autoevaluaciones"],
   },
   {
     title: "Curso IMAS Express",
@@ -53,9 +62,20 @@ const courses = [
       "Curso online con temas desarrollados, esquemas/resúmenes, autoevaluaciones y simulacros tipo examen.",
     features: ["Temas desarrollados", "Precio especial IMAS", "Simulacros tipo examen"],
   },
+  {
+    title: "Celador SMS",
+    subtitle: "Servicio Murciano de Salud",
+    badge: "Próximamente",
+    price: "Próximamente",
+    detail: "apertura pendiente",
+    description:
+      "Curso en preparación para Celador SMS con tema desarrollado, resúmenes, autoevaluaciones y simulacros.",
+    features: ["Tema desarrollado", "Resúmenes", "Autoevaluaciones y simulacros"],
+  },
 ];
 
 const includes = [
+  { icon: Laptop, title: "Clases grabadas SAS", text: "TCAE-SAS y Celador Conductor-SAS incluyen clases grabadas para estudiar a tu ritmo." },
   { icon: FileText, title: "Temarios desarrollados", text: "Contenido redactado y ordenado para avanzar paso a paso." },
   { icon: Layers3, title: "Esquemas y resúmenes", text: "Repasos visuales para memorizar lo más importante." },
   { icon: ClipboardCheck, title: "Test y autoevaluaciones", text: "Preguntas por temas con corrección para detectar fallos." },
@@ -150,7 +170,7 @@ export default function Home() {
             </p>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-100">
               Estudia a tu ritmo con temarios organizados, test, simulacros y acceso a Moodle.
-              Elige TCAE-SAS, IMAS Express o SMS según tu objetivo.
+              Elige TCAE-SAS, Celador Conductor-SAS, IMAS Express, SMS o Celador SMS según tu objetivo.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
@@ -241,11 +261,11 @@ export default function Home() {
               Elige el curso que encaja con tu oposición
             </h2>
             <p className="mt-4 text-lg text-slate-600">
-              TCAE-SAS forma parte de Academia LORMAN, junto a IMAS Express y SMS.
+              TCAE-SAS y Celador Conductor-SAS incluyen clases grabadas. En IMAS Express, SMS y Celador SMS tendrás tema desarrollado, resúmenes, autoevaluaciones y simulacros.
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
             {courses.map((course) => (
               <Card
                 key={course.title}
@@ -301,7 +321,7 @@ export default function Home() {
               Todo lo necesario para estudiar con orden
             </h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {includes.map(({ icon: Icon, title, text }) => (
               <Card key={title} className="rounded-lg border-slate-200 shadow-sm">
                 <CardContent className="p-5">
@@ -382,12 +402,14 @@ export default function Home() {
               Precios claros desde el primer momento
             </h2>
           </div>
-          <div className="grid gap-4 md:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
             {[
               ["TCAE-SAS", "25 €/mes", "durante 10 meses"],
+              ["Celador Conductor-SAS", "25 €", "curso online"],
               ["IMAS Express", "45 €", "pago único"],
               ["SMS", "90 €", "pago único"],
               ["SMS alumnos IMAS", "65 €", "precio especial"],
+              ["Celador SMS", "Próximamente", "apertura pendiente"],
             ].map(([name, price, detail]) => (
               <div key={name} className="rounded-lg border border-white/15 bg-white/10 p-5 text-center">
                 <p className="text-sm font-bold uppercase tracking-wide text-[#8ee9e4]">{name}</p>
