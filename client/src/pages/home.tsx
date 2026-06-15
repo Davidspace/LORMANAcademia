@@ -36,7 +36,7 @@ const courses = [
   {
     title: "Celador Conductor-SAS",
     badge: "Moodle online",
-    price: "25 €",
+    price: "25 €/mes",
     detail: "curso online",
     description:
       "Curso online para Celador Conductor-SAS con clases grabadas, temario organizado, test y acceso al aula virtual.",
@@ -193,8 +193,8 @@ export default function Home() {
             </div>
             <div className="mt-8 grid max-w-xl grid-cols-3 gap-3 text-center">
               <div className="rounded-lg border border-white/15 bg-white/10 p-3">
-                <strong className="block text-2xl text-[#ffd447]">3</strong>
-                <span className="text-xs text-slate-200">cursos online</span>
+                <strong className="block text-2xl text-[#ffd447]">5</strong>
+                <span className="text-xs text-slate-200">cursos abiertos</span>
               </div>
               <div className="rounded-lg border border-white/15 bg-white/10 p-3">
                 <strong className="block text-2xl text-[#ffd447]">24/7</strong>
@@ -289,7 +289,13 @@ export default function Home() {
                     {course.highlighted && <Star className="h-6 w-6 fill-[#ffd447] text-[#ffd447]" />}
                   </div>
                   <div className="mb-4 rounded-lg bg-[#f6f8fb] p-4">
-                    <p className="text-3xl font-extrabold text-[#112245]">{course.price}</p>
+                    <p
+                      className={`font-extrabold text-[#112245] ${
+                        course.price === "Próximamente" ? "text-xl" : "text-3xl"
+                      }`}
+                    >
+                      {course.price}
+                    </p>
                     <p className="mt-1 text-sm font-semibold text-slate-600">{course.detail}</p>
                   </div>
                   <p className="mb-5 leading-7 text-slate-600">{course.description}</p>
@@ -405,7 +411,7 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
             {[
               ["TCAE-SAS", "25 €/mes", "durante 10 meses"],
-              ["Celador Conductor-SAS", "25 €", "curso online"],
+              ["Celador Conductor-SAS", "25 €/mes", "curso online"],
               ["IMAS Express", "45 €", "pago único"],
               ["SMS", "90 €", "pago único"],
               ["SMS alumnos IMAS", "65 €", "precio especial"],
@@ -413,7 +419,13 @@ export default function Home() {
             ].map(([name, price, detail]) => (
               <div key={name} className="rounded-lg border border-white/15 bg-white/10 p-5 text-center">
                 <p className="text-sm font-bold uppercase tracking-wide text-[#8ee9e4]">{name}</p>
-                <p className="mt-3 text-3xl font-extrabold text-[#ffd447]">{price}</p>
+                <p
+                  className={`mt-3 font-extrabold text-[#ffd447] ${
+                    price === "Próximamente" ? "text-lg" : "text-3xl"
+                  }`}
+                >
+                  {price}
+                </p>
                 <p className="mt-2 text-sm text-slate-200">{detail}</p>
               </div>
             ))}
