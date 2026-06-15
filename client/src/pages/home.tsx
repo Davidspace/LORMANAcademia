@@ -17,20 +17,20 @@ import {
 } from "lucide-react";
 
 const whatsappNumber = "34640828654";
-const instagramUrl = "https://www.instagram.com/academianormativa/";
+const instagramUrl = "https://www.instagram.com/academialorman/";
 
 const whatsappText =
-  "Hola Academia Normativa, quiero información sobre los cursos online.";
+  "Hola Academia LORMAN, quiero información sobre los cursos online.";
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
 
 const courses = [
   {
-    title: "Curso TKISA",
+    title: "Curso TCAE-SAS",
     badge: "Moodle online",
     price: "25 €/mes",
     detail: "durante 10 meses",
     description:
-      "Curso online con acceso a Moodle, temario organizado, test y materiales de estudio.",
+      "Curso online TCAE-SAS con acceso a Moodle, temario organizado, test y materiales de estudio.",
     features: ["Temario por bloques", "Test de repaso", "Acceso desde móvil y ordenador"],
   },
   {
@@ -48,7 +48,7 @@ const courses = [
     subtitle: "Servicio Murciano de Salud",
     badge: "Destacado",
     price: "90 €",
-    detail: "65 € para alumnos IMAS",
+    detail: "pago único",
     description:
       "Curso online con temas desarrollados, esquemas/resúmenes, autoevaluaciones y simulacros tipo examen.",
     features: ["Temas desarrollados", "Precio especial IMAS", "Simulacros tipo examen"],
@@ -83,13 +83,13 @@ export default function Home() {
     <main className="min-h-screen bg-[#f6f8fb] text-slate-950">
       <header className="sticky top-0 z-40 border-b border-white/70 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-          <a href="#" className="flex items-center gap-3" aria-label="Academia Normativa">
+            <a href="#" className="flex items-center gap-3" aria-label="Academia LORMAN">
             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#112245] text-white">
               <GraduationCap className="h-5 w-5" />
             </span>
             <span className="leading-tight">
               <span className="block text-base font-extrabold tracking-wide text-[#112245]">
-                Academia Normativa
+                Academia LORMAN
               </span>
               <span className="hidden text-xs font-medium text-slate-500 sm:block">
                 Cursos online de normativa y oposiciones
@@ -143,14 +143,14 @@ export default function Home() {
               Estudia a tu ritmo con acceso a Moodle
             </div>
             <h1 className="max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-              Academia Normativa
+              Academia LORMAN
             </h1>
             <p className="mt-4 text-xl font-semibold text-[#8ee9e4]">
               Cursos online de normativa y oposiciones
             </p>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-100">
               Estudia a tu ritmo con temarios organizados, test, simulacros y acceso a Moodle.
-              Elige TKISA, IMAS Express o SMS según tu objetivo.
+              Elige TCAE-SAS, IMAS Express o SMS según tu objetivo.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
@@ -241,7 +241,7 @@ export default function Home() {
               Elige el curso que encaja con tu oposición
             </h2>
             <p className="mt-4 text-lg text-slate-600">
-              TKISA forma parte de Academia Normativa, junto a IMAS Express y SMS.
+              TCAE-SAS forma parte de Academia LORMAN, junto a IMAS Express y SMS.
             </p>
           </div>
 
@@ -343,7 +343,7 @@ export default function Home() {
               <div className="mb-4 flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wide text-[#0f9f9a]">
-                    Academia Normativa
+                    Academia LORMAN
                   </p>
                   <h3 className="text-xl font-extrabold text-[#112245]">Curso SMS</h3>
                 </div>
@@ -384,9 +384,9 @@ export default function Home() {
           </div>
           <div className="grid gap-4 md:grid-cols-4">
             {[
-              ["TKISA", "25 €/mes", "durante 10 meses"],
+              ["TCAE-SAS", "25 €/mes", "durante 10 meses"],
               ["IMAS Express", "45 €", "pago único"],
-              ["SMS", "90 €", "Servicio Murciano de Salud"],
+              ["SMS", "90 €", "pago único"],
               ["SMS alumnos IMAS", "65 €", "precio especial"],
             ].map(([name, price, detail]) => (
               <div key={name} className="rounded-lg border border-white/15 bg-white/10 p-5 text-center">
@@ -430,7 +430,7 @@ export default function Home() {
       <footer className="bg-slate-950 py-8 text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 text-center sm:px-6 md:flex-row md:items-center md:justify-between md:text-left">
           <div>
-            <p className="text-lg font-extrabold">Academia Normativa</p>
+            <p className="text-lg font-extrabold">Academia LORMAN</p>
             <p className="mt-1 text-sm text-slate-400">Cursos online de normativa y oposiciones.</p>
           </div>
           <div className="flex justify-center gap-3">
