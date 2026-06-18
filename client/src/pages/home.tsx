@@ -569,7 +569,7 @@ export default function Home() {
               Estudia a tu ritmo con temarios organizados, test, simulacros y acceso a Moodle.
               Elige TCAE-SAS, Celador Conductor-SAS, IMAS Express, SMS o Celador SMS según tu objetivo.
             </p>
-            <div className="mt-8 grid max-w-4xl gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
               <Button
                 asChild
                 className="h-12 w-full rounded-lg bg-[#ffd447] px-6 text-base font-extrabold text-[#112245] hover:bg-[#f5c51f]"
@@ -581,7 +581,7 @@ export default function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="h-12 w-full rounded-lg border-white/40 bg-transparent px-6 text-base font-bold text-white hover:bg-white hover:text-[#112245]"
+                className="h-12 w-full rounded-lg border-white/40 bg-transparent px-4 text-sm font-bold text-white hover:bg-white hover:text-[#112245] sm:px-6 sm:text-base"
               >
                 <a href="/#examen-sms">
                   Ir a la prueba del examen SMS
@@ -590,7 +590,7 @@ export default function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="h-12 w-full rounded-lg border-white/40 bg-transparent px-6 text-base font-bold text-white hover:bg-white hover:text-[#112245]"
+                className="h-12 w-full rounded-lg border-white/40 bg-transparent px-4 text-sm font-bold text-white hover:bg-white hover:text-[#112245] sm:px-6 sm:text-base"
               >
                 <a href="/#examen-imas">
                   Ir a la prueba del examen IMAS
@@ -856,6 +856,12 @@ export default function Home() {
                   Quiero más preguntas del IMAS
                 </a>
               </Button>
+              <a
+                href="/#examen-imas"
+                className="inline-flex items-center justify-center text-sm font-extrabold text-[#112245] underline underline-offset-4 hover:text-[#0f9f9a]"
+              >
+                Ir directamente a Prueba del examen IMAS
+              </a>
             </div>
           </div>
 
