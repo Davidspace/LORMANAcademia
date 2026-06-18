@@ -569,10 +569,10 @@ export default function Home() {
               Estudia a tu ritmo con temarios organizados, test, simulacros y acceso a Moodle.
               Elige TCAE-SAS, Celador Conductor-SAS, IMAS Express, SMS o Celador SMS según tu objetivo.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 grid max-w-4xl gap-3 sm:grid-cols-2 xl:grid-cols-4">
               <Button
                 asChild
-                className="h-12 rounded-lg bg-[#ffd447] px-6 text-base font-extrabold text-[#112245] hover:bg-[#f5c51f]"
+                className="h-12 w-full rounded-lg bg-[#ffd447] px-6 text-base font-extrabold text-[#112245] hover:bg-[#f5c51f]"
               >
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                   Pedir información por WhatsApp
@@ -581,16 +581,16 @@ export default function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="h-12 rounded-lg border-white/40 bg-white/10 px-6 text-base font-bold text-white hover:bg-white hover:text-[#112245]"
+                className="h-12 w-full rounded-lg border-white/40 bg-transparent px-6 text-base font-bold text-white hover:bg-white hover:text-[#112245]"
               >
-                <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-                  Ver Instagram
+                <a href="/#examen-sms">
+                  Ir a la prueba del examen SMS
                 </a>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="h-12 rounded-lg border-white/40 bg-transparent px-6 text-base font-bold text-white hover:bg-white hover:text-[#112245]"
+                className="h-12 w-full rounded-lg border-white/40 bg-transparent px-6 text-base font-bold text-white hover:bg-white hover:text-[#112245]"
               >
                 <a href="/#examen-imas">
                   Ir a la prueba del examen IMAS
@@ -599,10 +599,10 @@ export default function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="h-12 rounded-lg border-white/40 bg-transparent px-6 text-base font-bold text-white hover:bg-white hover:text-[#112245]"
+                className="h-12 w-full rounded-lg border-white/40 bg-white/10 px-6 text-base font-bold text-white hover:bg-white hover:text-[#112245]"
               >
-                <a href="/#examen-sms">
-                  Ir a la prueba del examen SMS
+                <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+                  Ver Instagram
                 </a>
               </Button>
             </div>
@@ -842,7 +842,7 @@ export default function Home() {
             </h2>
             <p className="mt-4 text-lg leading-8 text-slate-600">
               Hemos preparado una muestra basada en el examen oficial publicado
-              por Empleo PÃºblico de la RegiÃ³n de Murcia el 5 de mayo de 2024
+              por Empleo Público de la Región de Murcia el 5 de mayo de 2024
               para que puedas practicar con el tipo de preguntas que suelen
               trabajarse en TCAE IMAS Murcia.
             </p>
@@ -853,7 +853,7 @@ export default function Home() {
                 className="h-12 rounded-lg border-[#0f9f9a] px-6 text-base font-extrabold text-[#0f9f9a] hover:bg-[#0f9f9a] hover:text-white"
               >
                 <a href={imasExamWhatsappUrl} target="_blank" rel="noopener noreferrer">
-                  Quiero mÃ¡s preguntas del IMAS
+                  Quiero más preguntas del IMAS
                 </a>
               </Button>
             </div>
@@ -899,12 +899,12 @@ export default function Home() {
                   Para seguir practicando
                 </p>
                 <h3 className="mt-2 text-2xl font-extrabold">
-                  Â¿Quieres mÃ¡s preguntas reales, test y simulacros IMAS?
+                  ¿Quieres más preguntas reales, test y simulacros IMAS?
                 </h3>
                 <p className="mt-3 max-w-3xl text-base leading-7 text-slate-200">
                   Esta prueba es solo una muestra. Si quieres seguir practicando
-                  con mÃ¡s preguntas, autocorrecciones y material orientado a
-                  TCAE Murcia, escrÃ­benos y te informamos por WhatsApp.
+                  con más preguntas, autocorrecciones y material orientado a
+                  TCAE Murcia, escríbenos y te informamos por WhatsApp.
                 </p>
               </div>
               <Button
@@ -912,7 +912,7 @@ export default function Home() {
                 className="h-12 rounded-lg bg-[#ffd447] px-6 text-base font-extrabold text-[#112245] hover:bg-[#f5c51f]"
               >
                 <a href={imasExamWhatsappUrl} target="_blank" rel="noopener noreferrer">
-                  Pedir mÃ¡s informaciÃ³n
+                  Pedir más información
                 </a>
               </Button>
             </CardContent>
