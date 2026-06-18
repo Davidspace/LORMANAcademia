@@ -22,7 +22,6 @@ const instagramUrl = "https://www.instagram.com/academialorman/";
 const whatsappText =
   "Hola Academia LORMAN, quiero información sobre los cursos online.";
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
-const smsExamPdfUrl = "https://empleopublico.carm.es/publicaciones/36554.pdf";
 const smsExamWhatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Hola Academia LORMAN, he visto la prueba del examen SMS de TCAE y quiero más preguntas, simulacros e información del curso SMS.",
 )}`;
@@ -624,14 +623,6 @@ export default function Home() {
               Salud.
             </p>
             <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button
-                asChild
-                className="h-12 rounded-lg bg-[#112245] px-6 text-base font-extrabold hover:bg-[#0b1833]"
-              >
-                <a href={smsExamPdfUrl} target="_blank" rel="noopener noreferrer">
-                  Ver examen oficial completo
-                </a>
-              </Button>
               <Button
                 asChild
                 variant="outline"
