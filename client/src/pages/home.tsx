@@ -25,6 +25,9 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(w
 const smsExamWhatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Hola Academia LORMAN, he visto la prueba del examen SMS de TCAE y quiero más preguntas, simulacros e información del curso SMS.",
 )}`;
+const imasExamWhatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+  "Hola Academia LORMAN, he visto la prueba del examen IMAS Murcia de TCAE y quiero más preguntas, simulacros e información del curso IMAS.",
+)}`;
 
 const courses = [
   {
@@ -298,6 +301,190 @@ const smsExamPreviewQuestions = [
   },
 ];
 
+const imasExamPreviewQuestions = [
+  {
+    number: "01",
+    question:
+      "La Constitución Española de 1978 establece en su artículo 1 que son valores superiores del ordenamiento jurídico:",
+    options: [
+      "La libertad, la justicia y la autonomía de las regiones.",
+      "La justicia y la igualdad de los pueblos.",
+      "La libertad, la justicia, la igualdad y el pluralismo político.",
+      "La libertad, la igualdad y la equidad.",
+    ],
+  },
+  {
+    number: "02",
+    question:
+      "¿Qué artículo de la Constitución Española proclama que los españoles son iguales ante la Ley, sin que pueda prevalecer discriminación alguna?",
+    options: ["Artículo 9", "Artículo 11", "Artículo 14", "Artículo 18"],
+  },
+  {
+    number: "03",
+    question:
+      "Tienen la consideración de órganos directivos de la Administración General:",
+    options: [
+      "Los secretarios generales y los directores generales.",
+      "Los secretarios autonómicos y los vicesecretarios.",
+      "Los subdirectores generales y órganos asimilados.",
+      "Todas son correctas.",
+    ],
+  },
+  {
+    number: "04",
+    question:
+      "Los decretos por los que se establecen los órganos directivos de las diferentes consejerías se aprueban por:",
+    options: [
+      "El Presidente del Gobierno Regional.",
+      "El Consejo de Gobierno.",
+      "La Asamblea Regional.",
+      "El Consejo de Gobierno, a propuesta del Presidente.",
+    ],
+  },
+  {
+    number: "05",
+    question:
+      "Según el artículo 3 del Decreto Legislativo 1/2001, no se integrará en la Función Pública Regional:",
+    options: [
+      "El personal laboral de la Administración Pública de la Región de Murcia.",
+      "El personal eventual de la Administración Pública de la Región de Murcia.",
+      "El personal que presta servicios en la Asamblea Regional.",
+      "El personal estatutario del Servicio Murciano de Salud.",
+    ],
+  },
+  {
+    number: "06",
+    question:
+      "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días:",
+    options: [
+      "Se entiende que éstos son naturales.",
+      "Se entiende que éstos son hábiles.",
+      "Se entiende que éstos son naturales, excluyéndose del cómputo los sábados, domingos y festivos.",
+      "Se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, domingos y festivos.",
+    ],
+  },
+  {
+    number: "07",
+    question:
+      "Art. 4 de la Ley 4/1982, Estatuto de Autonomía para la Región de Murcia:",
+    options: [
+      "La bandera contiene 7 castillos almenados y 4 coronas reales.",
+      "La bandera contiene 4 castillos almenados y 7 coronas reales.",
+      "La bandera contiene 5 castillos almenados y 4 coronas reales.",
+      "La bandera contiene 7 castillos almenados y 5 coronas reales.",
+    ],
+  },
+  {
+    number: "08",
+    question:
+      "Art. 24 de la Ley 4/1982. Las elecciones serán convocadas por el Presidente de la Comunidad Autónoma, de manera que se realicen:",
+    options: [
+      "El primer domingo de mayo cada 4 años.",
+      "El segundo domingo de mayo cada 4 años.",
+      "El tercer domingo de mayo cada 4 años.",
+      "El cuarto domingo de mayo cada 4 años.",
+    ],
+  },
+  {
+    number: "09",
+    question:
+      "Las almohadillas de polietileno hinchadas con aire y ubicadas a los lados de la cama para prevenir lesiones y caídas, se denominan:",
+    options: [
+      "Protectores de las barandillas.",
+      "Centinelas de cama.",
+      "Arco de cama.",
+      "a) y b) son correctas.",
+    ],
+  },
+  {
+    number: "10",
+    question:
+      "¿Qué lesión elemental primaria de la piel es aquella que se manifiesta sobreelevada y de contenido sólido, inferior a 1 cm de diámetro?",
+    options: ["Mácula", "Nódulo", "Pápula", "Ampolla"],
+  },
+  {
+    number: "11",
+    question: "¿Cuál de las siguientes pinzas se utiliza para hemostasia?",
+    options: [
+      "Pinzas de Doyen.",
+      "Pinzas cangrejo.",
+      "Pinzas de Adson.",
+      "Pinzas de Crile.",
+    ],
+  },
+  {
+    number: "12",
+    question: "La sonda Malecot:",
+    options: [
+      "Es una sonda rígida de una sola luz.",
+      "Se emplea en el drenaje renal y suprapúbico.",
+      "Es una sonda semirrígida y su inserción es quirúrgica.",
+      "Es una sonda flexible con dos o tres luces en su interior.",
+    ],
+  },
+  {
+    number: "13",
+    question: "Es un aminoácido no esencial:",
+    options: ["Triptófano", "Cistina", "Lisina", "Valina"],
+  },
+  {
+    number: "14",
+    question: "¿Cuál es la dieta inicial en pacientes con infarto agudo de miocardio?",
+    options: [
+      "Líquidos por vía oral.",
+      "Dieta blanda.",
+      "Dieta semiblanda.",
+      "Líquidos por vía parenteral.",
+    ],
+  },
+  {
+    number: "15",
+    question:
+      "Según la escalera analgésica de la OMS de 1986, ¿qué fármaco pertenece al segundo escalón?",
+    options: ["Tramadol", "Metadona", "Fentanilo", "Paracetamol"],
+  },
+  {
+    number: "16",
+    question:
+      "¿Cuál es la vía que suele tolerar mejor el paciente sometido a cuidados paliativos si se le administra analgesia?",
+    options: ["Parenteral", "Cutánea", "Oral", "Respiratoria"],
+  },
+  {
+    number: "17",
+    question:
+      "¿Qué antagonista específico existe para tratar la intoxicación aguda por opiáceos?",
+    options: ["Rohipnol", "Metadona", "Naloxona", "Cannabis"],
+  },
+  {
+    number: "18",
+    question:
+      "En función de la clasificación realizada por NAHAS según sus características farmacológicas, ¿cuál de las siguientes drogas es un depresor del sistema nervioso central?",
+    options: ["Anfetaminas", "Heroína", "Benzodiacepinas", "Marihuana"],
+  },
+  {
+    number: "19",
+    question:
+      "En relación a la desinfección, señale el enunciado que NO es correcto:",
+    options: [
+      "La desinfección es un procedimiento que consiste en suprimir los microorganismos patógenos.",
+      "Los productos bacteriostáticos son aquellos que matan a los microorganismos.",
+      "Se denominan antisépticos a aquellos productos químicos utilizados para la desinfección de piel, heridas y cavidades del organismo.",
+      "Entre las cualidades que debe tener un antiséptico, nos encontramos que tiene que tener un amplio espectro de acción.",
+    ],
+  },
+  {
+    number: "20",
+    question:
+      "En relación a la desinfección y la esterilización señale el enunciado falso:",
+    options: [
+      "Antes de proceder a la esterilización de un objeto no hace falta limpiarlo.",
+      "Los detergentes ácidos son aquellos cuyo pH es de 5 o inferior.",
+      "Se denomina desinfección final o terminal a aquella que se realiza cuando se ha producido el alta del paciente.",
+      "Una de las barreras más efectivas para evitar el contacto de los microorganismos con tejidos estériles es la piel intacta.",
+    ],
+  },
+];
+
 function scrollTo(sectionId: string) {
   document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
 }
@@ -327,6 +514,9 @@ export default function Home() {
             </button>
             <button onClick={() => scrollTo("moodle")} className="hover:text-[#0f9f9a]">
               Moodle
+            </button>
+            <button onClick={() => scrollTo("examen-imas")} className="hover:text-[#0f9f9a]">
+              Examen IMAS
             </button>
             <button onClick={() => scrollTo("examen-sms")} className="hover:text-[#0f9f9a]">
               Examen SMS
@@ -395,6 +585,15 @@ export default function Home() {
               >
                 <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
                   Ver Instagram
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 rounded-lg border-white/40 bg-transparent px-6 text-base font-bold text-white hover:bg-white hover:text-[#112245]"
+              >
+                <a href="/#examen-imas">
+                  Ir a la prueba del examen IMAS
                 </a>
               </Button>
               <Button
@@ -531,6 +730,14 @@ export default function Home() {
                       Ver la prueba del examen SMS
                     </a>
                   )}
+                  {course.title === "Curso IMAS Express" && (
+                    <a
+                      href="/#examen-imas"
+                      className="mb-4 inline-flex items-center text-sm font-extrabold text-[#112245] underline underline-offset-4 hover:text-[#0f9f9a]"
+                    >
+                      Ver la prueba del examen IMAS
+                    </a>
+                  )}
                   <Button asChild className="mt-auto h-11 rounded-lg bg-[#0f9f9a] font-bold hover:bg-[#0b817d]">
                     <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                       Información por WhatsApp
@@ -621,6 +828,95 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="examen-imas" className="bg-white py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mx-auto mb-10 max-w-4xl text-center">
+            <p className="font-bold uppercase tracking-wide text-[#0f9f9a]">
+              Prueba del examen IMAS
+            </p>
+            <h2 className="mt-2 text-3xl font-extrabold text-[#112245] sm:text-4xl">
+              20 preguntas reales del examen publicado de TCAE Murcia 2024
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              Hemos preparado una muestra basada en el examen oficial publicado
+              por Empleo PÃºblico de la RegiÃ³n de Murcia el 5 de mayo de 2024
+              para que puedas practicar con el tipo de preguntas que suelen
+              trabajarse en TCAE IMAS Murcia.
+            </p>
+            <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 rounded-lg border-[#0f9f9a] px-6 text-base font-extrabold text-[#0f9f9a] hover:bg-[#0f9f9a] hover:text-white"
+              >
+                <a href={imasExamWhatsappUrl} target="_blank" rel="noopener noreferrer">
+                  Quiero mÃ¡s preguntas del IMAS
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-2">
+            {imasExamPreviewQuestions.map((item) => (
+              <Card key={item.number} className="rounded-lg border-0 shadow-md">
+                <CardContent className="p-6">
+                  <div className="mb-4 flex items-center justify-between gap-3">
+                    <span className="rounded-full bg-[#e7fbfa] px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-[#0f9f9a]">
+                      Pregunta {item.number}
+                    </span>
+                    <span className="text-xs font-bold uppercase tracking-wide text-slate-400">
+                      Examen real Murcia 2024
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-extrabold leading-7 text-[#112245]">
+                    {item.question}
+                  </h3>
+                  <ul className="mt-5 grid gap-3 text-sm leading-6 text-slate-700">
+                    {item.options.map((option, index) => (
+                      <li
+                        key={`${item.number}-${index}`}
+                        className="rounded-lg border border-slate-200 bg-slate-50 p-3"
+                      >
+                        <span className="font-extrabold text-[#112245]">
+                          {String.fromCharCode(97 + index)})
+                        </span>{" "}
+                        {option}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <Card className="mt-8 rounded-lg border-0 bg-[#112245] text-white shadow-xl">
+            <CardContent className="flex flex-col gap-5 p-8 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-wide text-[#8ee9e4]">
+                  Para seguir practicando
+                </p>
+                <h3 className="mt-2 text-2xl font-extrabold">
+                  Â¿Quieres mÃ¡s preguntas reales, test y simulacros IMAS?
+                </h3>
+                <p className="mt-3 max-w-3xl text-base leading-7 text-slate-200">
+                  Esta prueba es solo una muestra. Si quieres seguir practicando
+                  con mÃ¡s preguntas, autocorrecciones y material orientado a
+                  TCAE Murcia, escrÃ­benos y te informamos por WhatsApp.
+                </p>
+              </div>
+              <Button
+                asChild
+                className="h-12 rounded-lg bg-[#ffd447] px-6 text-base font-extrabold text-[#112245] hover:bg-[#f5c51f]"
+              >
+                <a href={imasExamWhatsappUrl} target="_blank" rel="noopener noreferrer">
+                  Pedir mÃ¡s informaciÃ³n
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
