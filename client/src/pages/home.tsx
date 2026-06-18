@@ -22,6 +22,10 @@ const instagramUrl = "https://www.instagram.com/academialorman/";
 const whatsappText =
   "Hola Academia LORMAN, quiero información sobre los cursos online.";
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+const smsExamPdfUrl = "https://empleopublico.carm.es/publicaciones/36554.pdf";
+const smsExamWhatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+  "Hola Academia LORMAN, he visto la prueba del examen SMS de TCAE y quiero más preguntas, simulacros e información del curso SMS.",
+)}`;
 
 const courses = [
   {
@@ -94,6 +98,207 @@ const moodleItems = [
   "Simulacros tipo examen",
 ];
 
+const smsExamPreviewQuestions = [
+  {
+    number: "01",
+    question:
+      "El paciente presentó alteraciones del comportamiento y agresividad, lo que llevó a la actuación de la policía y traslado a urgencias. ¿Cuál sería la actuación en el servicio de urgencias psiquiátricas con pacientes agresivos o agitados? Indicar la incorrecta.",
+    options: [
+      "La sujeción se llevará a cabo por todo el equipo presente, incluido el médico psiquiatra.",
+      "El médico y la enfermera responsable del paciente deben ser avisados de inmediato.",
+      "Si es en presencia de otros pacientes, se les pedirá que abandonen las dependencias para poder resolver la situación con agilidad.",
+      "En el momento de la reducción del paciente se procurará no causarle daño.",
+    ],
+  },
+  {
+    number: "02",
+    question:
+      "El paciente fue sedado. ¿Cuál de las precauciones previas a la hora de administrar un fármaco es la correcta?",
+    options: [
+      "Decidir la dosis adecuada según la respuesta del paciente.",
+      "Verificar la identidad del paciente y la medicación correcta antes de la administración.",
+      "Administrar la medicación por la vía más rápida.",
+      "Registrar únicamente la hora de administración.",
+    ],
+  },
+  {
+    number: "03",
+    question:
+      "A la hora de administrar un medicamento vía oral, ¿cuál de estos no es una consideración especial a tener en cuenta?",
+    options: [
+      "Los medicamentos no usados se regresan a los recipientes, para su reutilización.",
+      "No se deben administrar medicamentos de un recipiente mal rotulado.",
+      "Los medicamentos de sabor desagradable se administrarán mezclados con zumo y con sorbete.",
+      "No se debe perder de vista el carrito de unidosis o bandeja de medicamentos.",
+    ],
+  },
+  {
+    number: "04",
+    question:
+      "En la exploración general que se le hace al paciente, se registra la TA sistólica de 131 y diastólica de 59 mmHg, ¿cómo se denomina a la presión máxima registrada durante el ciclo cardíaco?",
+    options: ["TA diastólica", "TA media", "TA diferencial", "TA sistólica"],
+  },
+  {
+    number: "05",
+    question:
+      "La frecuencia cardíaca del paciente fue de 85 l.p.m. En un adulto en reposo, este valor se considera generalmente dentro del rango de:",
+    options: ["Bradicardia", "Taquicardia", "Pulso acelerado", "Arritmia"],
+  },
+  {
+    number: "06",
+    question:
+      "Se registraron las constantes vitales del paciente al llegar a urgencias, ¿cuál es la importancia del registro de datos en una gráfica ordinaria?",
+    options: [
+      "Es un requisito administrativo sin valor clínico.",
+      "Ayuda a tener una visión global del enfermo con tan solo ver la hoja de gráfica.",
+      "Sirve para un solo día y tener un control horario de las constantes vitales, así como otros parámetros.",
+      "Es muy utilizada en UCI y en la sala de despertar o reanimación posoperatoria.",
+    ],
+  },
+  {
+    number: "07",
+    question:
+      "El paciente fue contenido en cama de psiquiatría con 5 puntos de sujeción. ¿En qué situaciones está indicada este tipo de contención? Indicar la incorrecta.",
+    options: [
+      "En conductas violentas de un paciente que resulten peligrosas para él mismo o para los demás.",
+      "En agitación no controlable con medicamentos.",
+      "Cuando representen una amenaza para su integridad física debido a la negación del paciente a descansar, beber, dormir, etc.",
+      "En pacientes con sospechas de alteraciones violentas.",
+    ],
+  },
+  {
+    number: "08",
+    question:
+      "La impresión diagnóstica del paciente es psicosis. ¿Qué tipo de manifestaciones caracterizan a la psicosis orgánica?",
+    options: [
+      "Agresión contra sí mismo y contra otros.",
+      "Pensamiento desorganizado e ilógico.",
+      "Delirios, desorientación, agresividad, hostilidad.",
+      "Baja autoestima, alteración de los límites del ego.",
+    ],
+  },
+  {
+    number: "09",
+    question: "¿Qué es la contención mecánica en psiquiatría?",
+    options: [
+      "El uso de medicación para controlar la agitación del paciente.",
+      "El uso de sujeciones físicas para limitar la movilidad del paciente.",
+      "Terapia cognitivo-conductual para pacientes agresivos.",
+      "Técnica de relajación para reducir el estrés.",
+    ],
+  },
+  {
+    number: "10",
+    question: "¿Cuál es el propósito de la sedación en este paciente?",
+    options: [
+      "Reducir la ansiedad y la agitación.",
+      "Inducir el sueño.",
+      "Controlar la presión arterial.",
+      "Mejorar la saturación de oxígeno.",
+    ],
+  },
+  {
+    number: "11",
+    question: "¿Qué es la heteroagresividad en el contexto de este paciente?",
+    options: [
+      "Agresividad hacia sí mismo.",
+      "Agresividad hacia los demás.",
+      "Agresividad hacia objetos.",
+      "Agresividad hacia sí mismo y hacia los demás.",
+    ],
+  },
+  {
+    number: "12",
+    question: "¿Cuál puede ser un efecto adverso potencial de la sujeción mecánica?",
+    options: [
+      "Reducción del estrés.",
+      "Lesiones físicas.",
+      "Mejora el estado de ánimo.",
+      "Aumento de la colaboración.",
+    ],
+  },
+  {
+    number: "13",
+    question:
+      "Se procede al ingreso involuntario del paciente en el área de psiquiatría. Ortega Monasterio y Talón Navarro (1986), dan una serie de indicaciones médicas que aconsejan un internamiento forzoso, ¿cuál de las siguientes no es una de esas indicaciones?",
+    options: [
+      "Pérdida o grave disminución de la autonomía personal.",
+      "Riesgo de heteroagresividad.",
+      "Riesgo de autoagresividad.",
+      "Enfermedad mental que suponga una carga para la persona que esté a su cuidado.",
+    ],
+  },
+  {
+    number: "14",
+    question:
+      "El padre del paciente no sabe cómo afrontar esta situación y decide iniciar terapia familiar. ¿Hacia dónde tienden los objetivos generales de un programa tipo, cuando hablamos de terapia familiar? Indicar la incorrecta.",
+    options: [
+      "Formar coterapeutas y que expandan sus conocimientos al resto de la familia.",
+      "Conseguir la responsabilidad y colaboración del paciente con el trabajo del centro.",
+      "Facilitar el conocimiento y uso de recursos comunitarios.",
+      "Ofrecer una visión realista del problema en psiquiatría.",
+    ],
+  },
+  {
+    number: "15",
+    question: "¿Cuál es el objetivo de las terapias conductuales?",
+    options: [
+      "Reducir la necesidad de medicación.",
+      "Mejorar la adherencia al tratamiento.",
+      "Aumentar la frecuencia de los síntomas.",
+      "La extinción o reducción de una conducta inapropiada que perjudica al sujeto.",
+    ],
+  },
+  {
+    number: "16",
+    question:
+      "¿Cómo se denomina al equipo de profesionales de diferentes disciplinas que atendieron al paciente con un objetivo común en el servicio de urgencias?",
+    options: [
+      "Equipo de trabajo individual.",
+      "Servicio de mantenimiento.",
+      "Equipo multidisciplinar o interdisciplinar.",
+      "Personal administrativo.",
+    ],
+  },
+  {
+    number: "17",
+    question:
+      "Al paciente se le administró oxígeno por medio de gafas nasales, ¿qué dispositivo de oxigenoterapia permite alcanzar concentraciones de oxígeno superiores al 60-80%?",
+    options: [
+      "Gafas nasales o cánulas nasales.",
+      "Mascarilla tipo Venturi o ventimask.",
+      "Mascarilla facial simple.",
+      "Mascarilla con bolsa reservorio sin reciclado o reciclado parcial.",
+    ],
+  },
+  {
+    number: "18",
+    question: "La OMS define la salud mental como:",
+    options: [
+      "Estado completo de bienestar mental, físico y social y no meramente la ausencia de enfermedad o dolencia.",
+      "La adaptación óptima al entorno.",
+      "La capacidad de realizar actividades diarias.",
+      "Resultado de la presencia de aspectos psicológicos, afectivos y sociales sobre la salud, necesarios para alcanzar un estado de completo bienestar.",
+    ],
+  },
+  {
+    number: "19",
+    question: "Si la TA del paciente es de 131/59 mmHg, se considera:",
+    options: ["Hipotensión", "Normotensión", "Hipertensión", "Crisis hipertensiva"],
+  },
+  {
+    number: "20",
+    question:
+      "¿Cuál de las siguientes funciones en atención primaria no debe realizar el TCAE?",
+    options: [
+      "La aplicación de tratamientos curativos de carácter no medicamentoso.",
+      "Preparación de consultas programadas.",
+      "Ayudar a los pacientes para su exploración y tratamiento.",
+      "La recogida y limpieza del instrumental clínico.",
+    ],
+  },
+];
+
 function scrollTo(sectionId: string) {
   document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
 }
@@ -123,6 +328,9 @@ export default function Home() {
             </button>
             <button onClick={() => scrollTo("moodle")} className="hover:text-[#0f9f9a]">
               Moodle
+            </button>
+            <button onClick={() => scrollTo("examen-sms")} className="hover:text-[#0f9f9a]">
+              Examen SMS
             </button>
             <button onClick={() => scrollTo("precios")} className="hover:text-[#0f9f9a]">
               Precios
@@ -397,6 +605,103 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="examen-sms" className="bg-[#eef8f7] py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mx-auto mb-10 max-w-4xl text-center">
+            <p className="font-bold uppercase tracking-wide text-[#0f9f9a]">
+              Prueba del examen SMS
+            </p>
+            <h2 className="mt-2 text-3xl font-extrabold text-[#112245] sm:text-4xl">
+              20 preguntas reales del último examen publicado de TCAE SMS
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              Hemos tomado una muestra del examen oficial publicado por Empleo
+              Público de la Región de Murcia para que puedas ver el nivel y el
+              tipo de preguntas que aparecen en TCAE del Servicio Murciano de
+              Salud.
+            </p>
+            <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+              <Button
+                asChild
+                className="h-12 rounded-lg bg-[#112245] px-6 text-base font-extrabold hover:bg-[#0b1833]"
+              >
+                <a href={smsExamPdfUrl} target="_blank" rel="noopener noreferrer">
+                  Ver examen oficial completo
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 rounded-lg border-[#0f9f9a] px-6 text-base font-extrabold text-[#0f9f9a] hover:bg-[#0f9f9a] hover:text-white"
+              >
+                <a href={smsExamWhatsappUrl} target="_blank" rel="noopener noreferrer">
+                  Quiero más preguntas del SMS
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-2">
+            {smsExamPreviewQuestions.map((item) => (
+              <Card key={item.number} className="rounded-lg border-0 shadow-md">
+                <CardContent className="p-6">
+                  <div className="mb-4 flex items-center justify-between gap-3">
+                    <span className="rounded-full bg-[#e7fbfa] px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-[#0f9f9a]">
+                      Pregunta {item.number}
+                    </span>
+                    <span className="text-xs font-bold uppercase tracking-wide text-slate-400">
+                      Examen real SMS
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-extrabold leading-7 text-[#112245]">
+                    {item.question}
+                  </h3>
+                  <ul className="mt-5 grid gap-3 text-sm leading-6 text-slate-700">
+                    {item.options.map((option, index) => (
+                      <li
+                        key={`${item.number}-${index}`}
+                        className="rounded-lg border border-slate-200 bg-slate-50 p-3"
+                      >
+                        <span className="font-extrabold text-[#112245]">
+                          {String.fromCharCode(97 + index)})
+                        </span>{" "}
+                        {option}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <Card className="mt-8 rounded-lg border-0 bg-[#112245] text-white shadow-xl">
+            <CardContent className="flex flex-col gap-5 p-8 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-wide text-[#8ee9e4]">
+                  Para seguir practicando
+                </p>
+                <h3 className="mt-2 text-2xl font-extrabold">
+                  ¿Quieres más preguntas reales, autoevaluaciones y simulacros SMS?
+                </h3>
+                <p className="mt-3 max-w-3xl text-base leading-7 text-slate-200">
+                  Esta es solo una muestra. Si quieres seguir haciendo más examen
+                  SMS de TCAE, ver correcciones y acceder al curso completo,
+                  escríbenos y te informamos por WhatsApp.
+                </p>
+              </div>
+              <Button
+                asChild
+                className="h-12 rounded-lg bg-[#ffd447] px-6 text-base font-extrabold text-[#112245] hover:bg-[#f5c51f]"
+              >
+                <a href={smsExamWhatsappUrl} target="_blank" rel="noopener noreferrer">
+                  Pedir más información
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
