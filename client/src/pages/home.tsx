@@ -397,6 +397,15 @@ export default function Home() {
                   Ver Instagram
                 </a>
               </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 rounded-lg border-white/40 bg-transparent px-6 text-base font-bold text-white hover:bg-white hover:text-[#112245]"
+              >
+                <a href="/#examen-sms">
+                  Ir a la prueba del examen SMS
+                </a>
+              </Button>
             </div>
             <div className="mt-8 grid max-w-xl grid-cols-3 gap-3 text-center">
               <div className="rounded-lg border border-white/15 bg-white/10 p-3">
@@ -514,6 +523,14 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
+                  {course.title === "Curso SMS" && (
+                    <a
+                      href="/#examen-sms"
+                      className="mb-4 inline-flex items-center text-sm font-extrabold text-[#112245] underline underline-offset-4 hover:text-[#0f9f9a]"
+                    >
+                      Ver la prueba del examen SMS
+                    </a>
+                  )}
                   <Button asChild className="mt-auto h-11 rounded-lg bg-[#0f9f9a] font-bold hover:bg-[#0b817d]">
                     <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                       Información por WhatsApp
