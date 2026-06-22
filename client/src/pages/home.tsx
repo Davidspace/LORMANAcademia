@@ -28,8 +28,22 @@ const smsExamWhatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComp
 const imasExamWhatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Hola Academia LORMAN, he visto la prueba del examen IMAS Murcia de TCAE y quiero más preguntas, simulacros e información del curso IMAS.",
 )}`;
+const sermasExamWhatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+  "Hola Academia LORMAN, he visto la prueba del examen SERMAS Madrid de TCAE y quiero más preguntas, simulacros e información del curso SERMAS Madrid.",
+)}`;
 
 const courses = [
+  {
+    title: "Curso SERMAS Madrid",
+    subtitle: "TCAE Comunidad de Madrid",
+    badge: "Nuevo",
+    price: "95 €",
+    detail: "pago único",
+    description:
+      "Curso online TCAE SERMAS Madrid con temario desarrollado, resúmenes, autoevaluaciones, simulacros y acceso al aula virtual.",
+    features: ["Temario desarrollado", "Autoevaluaciones", "Simulacros tipo examen"],
+    highlighted: true,
+  },
   {
     title: "Curso TCAE-SAS",
     badge: "Moodle online",
@@ -98,6 +112,59 @@ const moodleItems = [
   "Autoevaluaciones por tema",
   "Preguntas tipo test",
   "Simulacros tipo examen",
+];
+
+const sermasExamPreviewQuestions = [
+  {
+    number: "01",
+    question:
+      "Según el artículo 75 del Estatuto del Personal Sanitario no Facultativo, ¿cuál de estas tareas no corresponde a las funciones habituales del auxiliar de enfermería en servicios de enfermería?",
+    options: [
+      "Colaborar en la administración de medicamentos por vía oral y rectal, con exclusión de la vía parenteral.",
+      "Colaborar en la recogida de datos termométricos y comunicar signos de interés al personal sanitario titulado.",
+      "Colaborar en el rasurado de las personas enfermas.",
+      "Recoger y limpiar el instrumental empleado en intervenciones quirúrgicas y ordenar vitrinas y arsenal.",
+    ],
+  },
+  {
+    number: "02",
+    question:
+      "En comunicación no verbal y metacomunicación, ¿qué afirmación no encaja con los axiomas de Watzlawick?",
+    options: [
+      "La comunicación tiene un nivel de contenido y otro de relación.",
+      "La secuencia de la comunicación influye en cómo se interpreta el mensaje.",
+      "La comunicación puede expresarse de forma digital y analógica.",
+      "Toda interacción se define como asimétrica y complementaria.",
+    ],
+  },
+  {
+    number: "03",
+    question:
+      "¿A partir de qué valor aproximado de presión mantenida sobre una zona corporal se considera que puede iniciarse la oclusión capilar?",
+    options: ["30 mmHg", "70 mmHg", "50 mmHg", "Ninguna de las anteriores"],
+  },
+  {
+    number: "04",
+    question:
+      "En la alimentación del paciente paliativo, ¿cuál es la pauta más adecuada de forma general?",
+    options: [
+      "Asegurar que coma al menos la mitad de todo lo que se le ofrece.",
+      "Obligarle a comer en el horario fijado aunque no tenga apetito.",
+      "Permitir que coma lo que quiera, cuando quiera y en la cantidad que tolere.",
+      "Impedir que la familia le lleve comida para evitar cambios en la dieta.",
+    ],
+  },
+  {
+    number: "05",
+    question:
+      "¿Cuál de las siguientes afirmaciones sobre la recogida y transporte de muestras biológicas es verdadera?",
+    options: [
+      "La muestra debe estar en contacto con desinfectantes o antisépticos para conservarse mejor.",
+      "No es necesario identificar el recipiente con los datos del paciente y el tipo de muestra.",
+      "El laboratorio debe disponer de un manual claro y conciso con normas de recogida y transporte.",
+      "Todas las muestras biológicas son exclusivamente de origen humano.",
+    ],
+  },
 ];
 
 const smsExamPreviewQuestions = [
@@ -608,7 +675,7 @@ export default function Home() {
             </div>
             <div className="mt-8 grid max-w-xl grid-cols-3 gap-3 text-center">
               <div className="rounded-lg border border-white/15 bg-white/10 p-3">
-                <strong className="block text-2xl text-[#ffd447]">5</strong>
+                <strong className="block text-2xl text-[#ffd447]">6</strong>
                 <span className="text-xs text-slate-200">cursos abiertos</span>
               </div>
               <div className="rounded-lg border border-white/15 bg-white/10 p-3">
@@ -680,7 +747,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-6">
             {courses.map((course) => (
               <Card
                 key={course.title}
@@ -736,6 +803,14 @@ export default function Home() {
                       className="mb-4 inline-flex items-center text-sm font-extrabold text-[#112245] underline underline-offset-4 hover:text-[#0f9f9a]"
                     >
                       Ver la prueba del examen IMAS
+                    </a>
+                  )}
+                  {course.title === "Curso SERMAS Madrid" && (
+                    <a
+                      href="/#examen-sermas"
+                      className="mb-4 inline-flex items-center text-sm font-extrabold text-[#112245] underline underline-offset-4 hover:text-[#0f9f9a]"
+                    >
+                      Ver la prueba del examen SERMAS
                     </a>
                   )}
                   <Button asChild className="mt-auto h-11 rounded-lg bg-[#0f9f9a] font-bold hover:bg-[#0b817d]">
@@ -828,6 +903,99 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="examen-sermas" className="bg-[#f7fbff] py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mx-auto mb-10 max-w-4xl text-center">
+            <p className="font-bold uppercase tracking-wide text-[#0f9f9a]">
+              Prueba del examen SERMAS
+            </p>
+            <h2 className="mt-2 text-3xl font-extrabold text-[#112245] sm:text-4xl">
+              5 preguntas de muestra para TCAE Comunidad de Madrid
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              Hemos preparado una pequeña prueba inspirada en preguntas de convocatorias publicadas
+              de TCAE de la Comunidad de Madrid para que puedas ver el estilo de examen que suele
+              aparecer en SERMAS.
+            </p>
+            <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 rounded-lg border-[#0f9f9a] px-6 text-base font-extrabold text-[#0f9f9a] hover:bg-[#0f9f9a] hover:text-white"
+              >
+                <a href={sermasExamWhatsappUrl} target="_blank" rel="noopener noreferrer">
+                  Quiero más preguntas del SERMAS
+                </a>
+              </Button>
+              <a
+                href="/#examen-sermas"
+                className="inline-flex items-center justify-center text-sm font-extrabold text-[#112245] underline underline-offset-4 hover:text-[#0f9f9a]"
+              >
+                Ir directamente a la prueba SERMAS
+              </a>
+            </div>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-2">
+            {sermasExamPreviewQuestions.map((item) => (
+              <Card key={item.number} className="rounded-lg border-0 shadow-md">
+                <CardContent className="p-6">
+                  <div className="mb-4 flex items-center justify-between gap-3">
+                    <span className="rounded-full bg-[#e7fbfa] px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-[#0f9f9a]">
+                      Pregunta {item.number}
+                    </span>
+                    <span className="text-xs font-bold uppercase tracking-wide text-slate-400">
+                      Comunidad de Madrid
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-extrabold leading-7 text-[#112245]">
+                    {item.question}
+                  </h3>
+                  <ul className="mt-5 grid gap-3 text-sm leading-6 text-slate-700">
+                    {item.options.map((option, index) => (
+                      <li
+                        key={`${item.number}-${index}`}
+                        className="rounded-lg border border-slate-200 bg-slate-50 p-3"
+                      >
+                        <span className="font-extrabold text-[#112245]">
+                          {String.fromCharCode(97 + index)})
+                        </span>{" "}
+                        {option}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <Card className="mt-8 rounded-lg border-0 bg-[#112245] text-white shadow-xl">
+            <CardContent className="flex flex-col gap-5 p-8 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-wide text-[#8ee9e4]">
+                  Para seguir practicando
+                </p>
+                <h3 className="mt-2 text-2xl font-extrabold">
+                  ¿Quieres más preguntas, autoevaluaciones y simulacros SERMAS?
+                </h3>
+                <p className="mt-3 max-w-3xl text-base leading-7 text-slate-200">
+                  Esta prueba es solo una muestra. Si quieres seguir practicando con más material
+                  de TCAE Comunidad de Madrid, escríbenos y te informamos del curso completo.
+                </p>
+              </div>
+              <Button
+                asChild
+                className="h-12 rounded-lg bg-[#ffd447] px-6 text-base font-extrabold text-[#112245] hover:bg-[#f5c51f]"
+              >
+                <a href={sermasExamWhatsappUrl} target="_blank" rel="noopener noreferrer">
+                  Pedir más información
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -1023,8 +1191,9 @@ export default function Home() {
               Precios claros desde el primer momento
             </h2>
           </div>
-          <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
+          <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-7">
             {[
+              ["SERMAS Madrid", "95 €", "pago único"],
               ["TCAE-SAS", "25 €/mes", "durante 10 meses"],
               ["Celador Conductor-SAS", "25 €/mes", "curso online"],
               ["IMAS Express", "45 €", "pago único"],
